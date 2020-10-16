@@ -26,7 +26,7 @@
 
     /* title size */
     --title-large: 18vw;
-    --title-medium: 9vw;
+    --title-medium: 10vw;
     --title-regular: 7vw;
 
     /* Font weight */
@@ -94,7 +94,7 @@ body {background: var(--color-white);}
     display: block;
     font-size: var(--title-medium);
     font-family: 'Cormorant Garamond', serif;
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-right);
     line-height: 9vw;
     white-space: nowrap;
 }
@@ -225,7 +225,7 @@ sec3 skill animation
     margin: 0 auto;
 }
 .poss .poss_box .right_box {
-    padding: 0 5%;
+    padding: 0 3%;
     width: 50%; 
     display: flex; 
     flex-direction: column; 
@@ -266,7 +266,7 @@ sec3 skill animation
 }
 .poss .poss_box .right_box .license {
     flex-basis: 15%;
-    padding-left: 36%;
+    padding-left: 40%;
     text-align: right;
 }
 .poss .poss_box .right_box .license em {
@@ -295,12 +295,22 @@ sec3 skill animation
 
 /* @media query */
 /* 화면 너비 0 ~ 1320px */
-@media (max-width: 1320px){
+@media (max-width: 1280px){
     .row {padding: 0 24px;}
     /* // 공통 */
 
-    .poss .poss_box .right_box .skills {padding-right: 11%;}
-    .poss .poss_box .right_box .license {padding-left: 21%;}
+    .poss .poss_box .right_box .p_txt p {
+        padding: 30% 0 5%;
+        font-size: var(--font-micro);
+    }
+    .poss .poss_title h2 em:nth-child(2) {
+        righit: 14%
+    }
+    .poss .poss_box .right_box .skills {padding-right: 34%;}
+    .poss .poss_box .right_box .skills p {font-size: var(--font-micro);}
+    .poss .poss_box .right_box .license {padding-left: 33%;}
+    .poss .poss_box .right_box .license p {font-size: var(--font-micro);}
+    /* // section 3 */
 }
 
 @media (max-width: 1024px){
