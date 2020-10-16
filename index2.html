@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
+
+    <!-- webfotns -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1>A - PERSONAL - PROJECT</h1>
+        <span>2020</span>
+    </header>
+    <!-- //header -->
+
+    <nav id="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">work</a></li>
+            <li><a href="#">site</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+    <!-- //nav -->
+
+    <section id="contents">
+        <section id="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="sec1">
+                        <span>PORTFOLIO</span>
+                        <span>LEE BYUNG JU</span>
+                        <span>WEB PUBLISHER &amp;</span>
+                        <span>DEVOLOPER</span>
+                        <span>LEE BYUNG JU</span>
+                        <span>PORTFOLIO</span>
+                        <span>DEVOLOPER</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="sec2">
+                        <h2>About me</h2>
+                        <div class="desc">
+                            <article>
+                                <h3>코딩을 접하면서.....</h3>
+                                <span class="date">During 2015 - 2019</span>
+                                <p class="memo">바람에 생각나요. 날 항상 감싸줬던 따뜻한 그녀의 품 속이 오늘 참 그리워요. 모두가 그렇 듯이 그녀도 시들었죠. 짓궂게 흐르는 시간이 너무 원망스럽죠. </p>
+                            </article>
+                            <article>
+                                <h3>구조를 알게되다.....</h3>
+                                <span class="date">During 2015 - 2019</span>
+                                <p class="memo">웹에 관심이 많았던 저는 웹디자인을 배우는 과정에서 처음으로 코딩을 접하게 되었습니다. 배워보지도 못한 영역이라 처음엔 개념이 안 잡혀있어서 어려웠지만, 매일매일 메모장에 그날의 수업을 웹 수업 1일 차, 2일 차 이렇게 적어가며 네이버 클라우드에 저장해 집에서도 복습했습니다. 그렇게 배우다 보니 코딩의 매력에 빠져 퍼블리셔라는 직업을 알게 되었습니다.</p>
+                            </article>
+                            <article>
+                                <h3>이런 개발자라면...</h3>
+                                <span class="date">During 2015 - 2019</span>
+                                <p class="memo">바람에 생각나요. 날 항상 감싸줬던 따뜻한 그녀의 품 속이 오늘 참 그리워요. 모두가 그렇 듯이 그녀도 시들었죠. 짓궂게 흐르는 시간이 너무 원망스럽죠.</p>
+                            </article>
+                        </div>
+                        <div class="skill-wrap">
+                            <div class="skill">
+                                <ul class="clearfix">
+                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">90</strong><span>HTML5</span></a></li>
+                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">90</strong><span>CSS3</span></a></li>
+                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">80</strong><span>JAVASCRIPT</span></a></li>
+                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">80</strong><span>JQUERY</span></a></li>
+                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">70</strong><span>PHOTOSHOP</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+    </section>
+    <!-- //contents -->
+    
+    
+    
+    <script src="https://webstoryboy.github.io/portfolio/port4/assets/js/jquery-1.12.4.js"></script>
+    <script src="https://webstoryboy.github.io/portfolio/port4/assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script src="https://webstoryboy.github.io/portfolio/port4/assets/js/easypiechart.min.js"></script>
+    <script>
+        function counter() {
+            if ($('.skill .count').size()) {
+                $c = $('.skill .count');
+
+                $c.each(function () {
+                    var $this = $(this);
+                    $this.data('target', parseInt($this.html()));
+                    $this.data('counted', false);
+                    $this.html('0');
+                });
+
+                $(window).bind('scroll', function () {
+                    var speed = 5000;
+
+                    $c.each(function (i) {
+                        var $t = $(this);
+                        if (!$t.data('counted') && $(window).scrollTop() + $(window).height() >= $t.offset().top) {
+
+                            $t.data('counted', true);
+
+                            $t.animate({
+                                dummy: 1
+                            }, {
+                                duration: speed,
+                                step: function (now) {
+                                    var $this = $(this);
+                                    var val = Math.round($this.data('target') * now);
+                                    $this.html(val);
+                                },
+                                easing: 'easeInOutQuart'
+                            });
+
+                            // easy pie
+                            $('.pie').easyPieChart({
+                                barColor: '#000',
+                                trackColor: '#ccc',
+                                scaleColor: '#000',
+                                scaleLength: 5,
+                                lineWidth: 1,
+                                size: 200,
+                                lineCap: 'round',
+                                animate: { duration: speed, enabled: true }
+                            });
+                        }
+                    });
+                }).triggerHandler('scroll');
+            }
+        }
+        counter();
+    </script>
+</body>
+
+</html>
+
+
+<!-- https://motoifuruya.com/EN/ -->

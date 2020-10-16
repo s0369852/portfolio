@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Nanum Maru Buri';
+    font-weight: normal; 
+    font-style: normal; 
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff2) format('woff2'),
+        url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
+    font-display: swap;
+}
+
+/* Global */
+:root {
+    /* color */
+    --color-black: #222222;
+    --color-white: #F0F0F0;
+    --color-transparent: transparent;
+
+    /* Font size */
+    --font-large: 48px;
+    --font-medium: 32px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+
+    /* title size */
+    --title-large: 18vw;
+    --title-medium: 9vw;
+    --title-regular: 7vw;
+
+    /* Font weight */
+    --weight-black : 900;
+    --weight-bold: 700;
+    --weight-medium: 500;
+    --weight-regular: 400;
+    --weight-right: 300;
+    --weight-thin: 100;
+}
+
+body {background: var(--color-white);}
+
+/* 레이아웃 */
+#header{width: 100%;/*background-color: rgba(0,0,0,.1);*/}
+#contents {width: 100%; /*background-color: rgba(0,0,0,.1);*/}
+#section1 {width: 100%; /*background-color: rgba(0,0,0,.2);*/}
+#section2 {width: 100%; /*background-color: rgba(0,0,0,.3);*/}
+#section3 {width: 100%; /*height: 500px; background-color: rgba(0,0,0,.4);*/}
+#section4 {width: 100%; height: 1000px; background-color: rgba(0,0,0,.5);}
+#footer {width: 100%; height: 590px; background-color: rgba(0,0,0, .6);}
+
+/* container */
+.container {
+    position: relative;
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 헤더 영역 */
+.hd .left_hd {position: fixed; top: 20px; left: 20px;}
+.hd .left_hd h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-micro);
+}
+
+.hd .right_hd {position: fixed; top: 20px; right: 20px;}
+.hd .right_hd span {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-micro);
+}
+
+/* 네비 영역 */
+#nav {
+    position: fixed; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 20px; 
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-small);
+    text-transform: capitalize; 
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+}
+.nav_list li {display: inline;}
+.nav_list li a {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* section1 .main */
+.main {padding: 20vh 0 50vh}
+.main span {
+    display: block;
+    font-size: var(--title-medium);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: var(--weight-medium);
+    line-height: 9vw;
+    white-space: nowrap;
+}
+.main span.outline {
+    color: var(--color-transparent);
+    font-weight: var(--weight-medium);
+    -webkit-text-stroke: 1.4px var(--color-black);
+}
+
+
+/* section2 .about */
+.about {padding-bottom: 50vh;}
+.about_title h2 {
+    margin-bottom: 30vh;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--title-large);
+    font-weight: var(--weight-medium);
+    white-space: nowrap;
+    padding-bottom: 30px;
+}
+
+.abt {width: 60%; margin-bottom: 150px;}
+.abt:nth-child(2) {margin: auto 0 150px auto;}
+
+.title_box .abt_subtitle {
+    display: inline-block;
+    font-family: 'Nanum Maru Buri';
+    font-size: var(--font-medium);
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+.title_box .during {
+    margin-left: 1em;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-micro);
+    font-weight: var(--weight-bold);
+    vertical-align: bottom;
+}
+.a_txt {
+    padding-top: 2em;
+    font-family: 'Nanum Maru Buri';
+    font-size: var(--font-small);
+}
+
+/* section3 skills&tool */
+/* .skill {
+    display: flex;
+    width: 100%; 
+    padding: 20vh 0;
+}
+.skill .skill_title {
+    width: 45%;
+    padding: 50px 0 150px;
+}
+.skill .skill_title h2 {
+    font-size: 9vw;
+    font-family: 'Nanum Maru Buri';
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 0.9;
+} 
+
+.line {
+    width: 1px;
+    background-color: #000;
+    height: auto;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+} 
+
+.skill {width: 100%;}
+
+.skill_wrap .p_box {text-align: center;  padding: 10% 0;}
+.skill_wrap .p_box li {position: relative; float: left; width: 20%;}
+.skill_wrap .p_box li a {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.skill_wrap .p_box li a strong {font-size: 60px; color: #000; font-family: 'Nanum Maru Buri', sans-serif; font-weight: 100; line-height: 1.1;}
+.skill_wrap .p_box li a span {display:block; font-size: 16px; color: #000;}
+
+
+sec3 skill animation
+.skill_wrap .p_box li:nth-child(1) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.1s ease  }
+.skill_wrap .p_box li:nth-child(2) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.2s ease  }
+.skill_wrap .p_box li:nth-child(3) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.3s ease  }
+.skill_wrap .p_box li:nth-child(4) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.4s ease  }
+.skill_wrap .p_box li:nth-child(5) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.5s ease  }
+
+.skill_wrap.show .p_box li:nth-child(1) {opacity: 1; transform: translateY(0px)  }
+.skill_wrap.show .p_box li:nth-child(2) {opacity: 1; transform: translateY(0px)  }
+.skill_wrap.show .p_box li:nth-child(3) {opacity: 1; transform: translateY(0px)  }
+.skill_wrap.show .p_box li:nth-child(4) {opacity: 1; transform: translateY(0px)  }
+.skill_wrap.show .p_box li:nth-child(5) {opacity: 1; transform: translateY(0px)  }
+*/ 
+
+/* section3 .poss */
+.poss {padding-bottom: 50vh;}
+.poss .poss_title {}
+.poss .poss_title h2 {position: relative;}
+.poss .poss_title h2 em {
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--title-regular);
+    font-weight: var(--weight-bold);
+}
+.poss .poss_title h2 em:nth-child(1) {
+    top:-1.1em;
+    right:2.2em;
+}
+.poss .poss_title h2 em:nth-child(2) {
+    top:-0.3em;
+    right:1.7em;
+    color: var(--color-transparent);
+    -webkit-text-stroke: 1.3px var(--color-black);
+
+}
+.poss .poss_title h2 p {
+    position: absolute;
+    top: -14em;
+    right: 0;
+    font-family: 'Nanum Maru Buri';
+    font-size: var(--font-regular);
+}
+.poss .poss_box {display: flex;}
+.poss .poss_box .left_box {width: 50%;}
+.poss .poss_box .left_box img {
+    display: block;
+    margin: 0 auto;
+}
+.poss .poss_box .right_box {
+    padding: 0 5%;
+    width: 50%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-evenly;
+}
+.poss .poss_box .right_box .p_txt {
+    flex-basis: 70%;
+    font-family: 'Nanum Maru Buri';
+    font-size: var(--font-small);
+    line-height: 2;
+}
+.poss .poss_box .right_box .p_txt p {
+    padding: 40% 0 10%;
+}
+.poss .poss_box .right_box .skills{
+    flex-basis: 15%;
+    padding-right: 40%;
+}
+.poss .poss_box .right_box .skills em {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-regular);
+}
+.poss .poss_box .right_box .skills em::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+    width: 55px;
+    height: 1px;
+    background-color: var(--color-black);
+}
+.poss .poss_box .right_box .skills p {
+    padding-top: 3%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
+}
+.poss .poss_box .right_box .license {
+    flex-basis: 15%;
+    padding-left: 36%;
+    text-align: right;
+}
+.poss .poss_box .right_box .license em {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-regular);
+}
+.poss .poss_box .right_box .license em::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    width: 75px;
+    height: 1px;
+    background-color: var(--color-black);
+}
+.poss .poss_box .right_box .license p {
+    padding-top: 3%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
+}
+
+
+
+
+/* @media query */
+/* 화면 너비 0 ~ 1320px */
+@media (max-width: 1320px){
+    .row {padding: 0 24px;}
+    /* // 공통 */
+
+    .poss .poss_box .right_box .skills {padding-right: 11%;}
+    .poss .poss_box .right_box .license {padding-left: 21%;}
+}
+
+@media (max-width: 1024px){
+
+}
+
+@media (max-width: 960px){
+
+}
+
+@media (max-width: 800px){
+    .container {width: 100%;}
+    /* // 공통 */
+
+    #nav {display: none;}
+    /* // nav */
+
+    #section1 {height: 100vh;}
+    #section1 .row {height: 100vh;}
+    .main {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+        padding: 0;
+    }
+    /* // section1 main */
+
+    .abt {width: 100%;}
+    .title_box .abt_subtitle {display: block;}
+    .title_box .during {margin-left: 0;}
+    /* // section2 about_box */
+
+
+    /* // section3 skills&tools */
+}

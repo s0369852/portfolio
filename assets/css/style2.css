@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Nanum Maru Buri';
+    font-weight: normal; 
+    font-style: normal; 
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff2) format('woff2'),
+         url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
+    font-display: swap;
+}
+
+/* layout */
+#contents {}
+#section1 {background: #F0F0F0;}
+#section2 {background: #F0F0F0;}
+#section3 {}
+#section4 {}
+#section5 {}
+
+/* container */
+.container {
+    position: relative;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* header */
+#header h1 {
+    position: fixed; left: 20px; top: 20px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+#header span {
+    position: fixed; right: 20px; top: 20px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* nav */
+#nav {
+    position: fixed; right: 20px;
+    top: 50%; 
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: capitalize;
+    writing-mode: vertical-rl;
+}
+#nav li {
+    display: inline;
+}
+#nav li a {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* sec1 */
+.sec1 {padding-top: 20vh;}
+.sec1 span {
+    font-size: 10vw;
+    line-height: 9vw;
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+/* sec2 */
+.sec2 {padding: 50vh 0 30vh 0;}
+.sec2 h2 {
+    font-size: 18vw;
+    font-family: 'Cormorant Garamond', serif;
+    padding-bottom: 30vh;
+    font-weight: normal;
+}
+.sec2 .desc h3 {
+    font-size: 3rem;
+    font-family: 'Nanum Maru Buri';
+    font-weight: 700;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.sec2 .desc .date {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    padding-bottom: 10px;
+    display: block;
+}
+.sec2 .desc article {
+    padding-bottom: 10vw;
+    font-family: 'Nanum Maru Buri';
+    display: block;
+    width: 60%;
+    
+}
+.sec2 .desc article:nth-child(2){
+    margin-left: auto;
+    padding-bottom: 7vw;
+}
+.sec2 .desc .memo {
+    font-size: 16px;
+    
+}
+
+
+
+
+
+/* skill */
+.skill-wrap .skill {text-align: center;  padding: 10% 0;}
+.skill-wrap .skill li {float: left; width: 20%; position: relative; }
+.skill-wrap .skill li a {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.skill-wrap .skill li a strong {font-size: 60px; color: #000; font-family: 'Lato', sans-serif; font-weight: 100; line-height: 1.1;}
+.skill-wrap .skill li a span {font-size: 16px; color: #000; display: block;}
+
+.skill-wrap .skill li:nth-child(1) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.1s ease  }
+.skill-wrap .skill li:nth-child(2) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.2s ease  }
+.skill-wrap .skill li:nth-child(3) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.3s ease  }
+.skill-wrap .skill li:nth-child(4) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.4s ease  }
+.skill-wrap .skill li:nth-child(5) {opacity: 1; transform: translateY(-60px); transition: all 0.8s 0.5s ease  }
+
+.skill-wrap.show .skill li:nth-child(1) {opacity: 1; transform: translateY(0px)  }
+.skill-wrap.show .skill li:nth-child(2) {opacity: 1; transform: translateY(0px)  }
+.skill-wrap.show .skill li:nth-child(3) {opacity: 1; transform: translateY(0px)  }
+.skill-wrap.show .skill li:nth-child(4) {opacity: 1; transform: translateY(0px)  }
+.skill-wrap.show .skill li:nth-child(5) {opacity: 1; transform: translateY(0px)  }
+
+/* mediaquery */
+@media (max-width: 1320px){
+    .row {padding: 0 20px}
+    
+}
+@media (max-width: 800px){
+    #nav {display: none;}
+    #section1 {height: 100vh;}
+    #section1 .row {height: 100vh;}
+    .sec1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+        padding-top: 0;
+    }
+}
+
+
+
+
+
