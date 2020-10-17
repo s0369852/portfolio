@@ -57,3 +57,25 @@ input, select, textarea, button {vertical-align: middle; border: 0; background: 
 .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; text-indent: -9999px;}
 .ir_wa {position: relative; display: block; overflow: hidden; width: 100%; height: 100%; z-index: 1;}
 .ir_so {position: absolute; overflow: hidden; width: 0; height: 0; line-height: 0; text-indent: -9999px;}
+
+/* input 스타일 초기화 */
+input {background-image: none;}
+input[type=button], input[type=reset], input[type=text],
+input[type=password], input[type=submit],
+input[type=search], input[type=tel], input[type=email] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+input:checked[type=checkbox] {
+    background-color: #666666;
+    -webkit-appearance: checkbox;
+}
