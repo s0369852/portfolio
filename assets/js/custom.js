@@ -1,49 +1,55 @@
-function counter() {
-    if ($('.p_box .count').size()) {
-        $c = $('.p_box .count');
 
-        $c.each(function () {
-            var $this = $(this);
-            $this.data('target', parseInt($this.html()));
-            $this.data('counted', false);
-            $this.html('0');
-        });
+$(".splice").each(function(){
+    let txt = $(this).text();
+    let split = txt.split("").join("</span><span aria-hidden='true'>");
+    split = "<span aria-hidden='true'>" + split + "</span>";
+    $(this).html(split).attr("aria-label", txt);
+});
 
-        $(window).bind('scroll', function () {
-            var speed = 5000;
+setTimeout(function(){
+    gsap.to("#header", {duration: .8, opacity:1, stagger: 0.1, y: 0, delay: 1});
+    gsap.to(".nav_list li", {keyframes: [
+        {opacity: 1, duration: .8, delay: 1.5}
+    ], ease: "power3.inOut"});
+    gsap.to(".main strong:nth-child(1) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0});
+    gsap.to(".main strong:nth-child(2) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+    gsap.to(".main strong:nth-child(3) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.2});
+    gsap.to(".main strong:nth-child(4) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
+    gsap.to(".main strong:nth-child(5) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.4});
+    gsap.to(".main strong:nth-child(6) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
+    gsap.to(".main strong:nth-child(7) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.6});
+    gsap.to(".possi_title h2:nth-child(1) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 2});
+    gsap.to(".possi_title h2:nth-child(2) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 2.1});
+    gsap.to(".work_title h2 span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 3});
+    gsap.to(".footer_title h2 span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 4});
+    
+},2000)
 
-            $c.each(function (i) {
-                var $t = $(this);
-                if (!$t.data('counted') && $(window).scrollTop() + $(window).height() >= $t.offset().top) {
+$(window).scroll(function(){
+    var scroll = $(window).scrollTop();
 
-                    $t.data('counted', true);
+    $(".scroll").text(scroll);
 
-                    $t.animate({
-                        dummy: 1
-                    }, {
-                        duration: speed,
-                        step: function (now) {
-                            var $this = $(this);
-                            var val = Math.round($this.data('target') * now);
-                            $this.html(val);
-                        },
-                        easing: 'easeInOutQuart'
-                    });
-
-                    // easy pie
-                    $('.pie').easyPieChart({
-                        barColor: '#000',
-                        trackColor: '#ccc',
-                        scaleColor: '#000',
-                        scaleLength: 5,
-                        lineWidth: 1,
-                        size: 200,
-                        lineCap: 'round',
-                        animate: { duration: speed, enabled: true }
-                    });
-                }
-            });
-        }).triggerHandler('scroll');
+    if(scroll > $(".about_title h2").offset().top){
+        gsap.to('.about_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, rotation: 0});
+        gsap.to('.txt_box1 .subtitle span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
+        gsap.to('.txt_box1 .during', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.4});
+        gsap.to('.txt_box1 .a_txt', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
+        gsap.to('.txt_box2 .subtitle span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.6});
+        gsap.to('.txt_box2 .during', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.7});
+        gsap.to('.txt_box2 .a_txt', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.8});
+        gsap.to('.txt_box3 .subtitle span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.9});
+        gsap.to('.txt_box3 .during', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1});
+        gsap.to('.txt_box3 .a_text', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.1});
     }
-}
-counter();
+});
+
+
+/* 
+스크롤 구하기
+
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        $(".scroll").text(scroll);
+    });
+*/
