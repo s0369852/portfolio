@@ -1,10 +1,25 @@
+.scroll {
+    z-index: 100000;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+
 @font-face {
     font-family: 'Nanum Maru Buri';
     font-weight: normal; 
     font-style: normal; 
     font-weight: 400;
     src: url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff2) format('woff2'),
-         url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
+        url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
     font-display: swap;
 }
 
@@ -56,13 +71,20 @@
 
 /* sec1 */
 .sec1 {padding-top: 20vh;}
-.sec1 span {
-    font-size: 10vw;
-    line-height: 9vw;
+.sec1 strong {
+    font-size: 12vw;
+    line-height: 10vw;
+    letter-spacing: -3px;
     display: block;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     white-space: nowrap;
+    overflow: hidden;
+}
+.sec1 strong span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 /* sec2 */
@@ -72,6 +94,12 @@
     font-family: 'Cormorant Garamond', serif;
     padding-bottom: 30vh;
     font-weight: normal;
+}
+.sec2 h2 span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 30px;
+    transform: translateY(100px) rotate(30deg);
 }
 .sec2 .desc h3 {
     font-size: 3rem;
