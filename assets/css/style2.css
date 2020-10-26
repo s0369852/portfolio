@@ -19,7 +19,7 @@
     font-style: normal; 
     font-weight: 400;
     src: url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff2) format('woff2'),
-         url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
+        url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
     font-display: swap;
 }
 
@@ -96,7 +96,13 @@
     font-weight: normal;
 }
 .sec2 h2 span {
+<<<<<<< HEAD
     opacity: 0; display: inline-block; min-width: 30px;
+=======
+    opacity: 0;
+    display: inline-block;
+    min-width: 30px;
+>>>>>>> 25df7f1e922790e2fbcdd2b5efa5b7f5689d40cf
     transform: translateY(100px) rotate(30deg);
 }
 .sec2 .desc h3 {
