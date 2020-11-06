@@ -19,15 +19,15 @@
     font-style: normal; 
     font-weight: 400;
     src: url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff2) format('woff2'),
-        url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
+         url(https://cdn.jsdelivr.net/gh/webfontworld/webfonts2020_02/NanumMaruburiBetar.woff) format('woff');
     font-display: swap;
 }
 
 /* layout */
 #contents {}
-#section1 {background: #F0F0F0;}
-#section2 {background: #F0F0F0;}
-#section3 {}
+#section1 {position: relative; z-index: 10000; background: #F0F0F0;}
+#section2 {position: relative; z-index: 9000; background: #F0F0F0; height: 4000px;}
+#section3 {position: relative; z-index: 9100; background: #F0F0F0; height: 4000px;}
 #section4 {}
 #section5 {}
 
@@ -70,73 +70,26 @@
 }
 
 /* sec1 */
-.sec1 {padding-top: 20vh;}
+.sec1 {padding: 40vh 0; padding-left: 5vw;}
 .sec1 strong {
-    font-size: 12vw;
-    line-height: 10vw;
+    font-size: 14vw;
+    line-height: 13vw;
     letter-spacing: -3px;
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Anton', sans-serif;
     font-weight: 300;
     white-space: nowrap;
     overflow: hidden;
 }
 .sec1 strong span {
     display: inline-block;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 /* sec2 */
-.sec2 {padding: 50vh 0 30vh 0;}
-.sec2 h2 {
-    font-size: 18vw;
-    font-family: 'Cormorant Garamond', serif;
-    padding-bottom: 30vh;
-    font-weight: normal;
-}
-.sec2 h2 span {
-<<<<<<< HEAD
-    opacity: 0; display: inline-block; min-width: 30px;
-=======
-    opacity: 0;
-    display: inline-block;
-    min-width: 30px;
->>>>>>> 25df7f1e922790e2fbcdd2b5efa5b7f5689d40cf
-    transform: translateY(100px) rotate(30deg);
-}
-.sec2 .desc h3 {
-    font-size: 3rem;
-    font-family: 'Nanum Maru Buri';
-    font-weight: 700;
-    letter-spacing: -1px;
-    white-space: nowrap;
-    text-transform: uppercase;
-    font-weight: normal;
-}
-.sec2 .desc .date {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    font-family: 'Cormorant Garamond', serif;
-    padding-bottom: 10px;
-    display: block;
-}
-.sec2 .desc article {
-    padding-bottom: 10vw;
-    font-family: 'Nanum Maru Buri';
-    display: block;
-    width: 60%;
-    
-}
-.sec2 .desc article:nth-child(2){
-    margin-left: auto;
-    padding-bottom: 7vw;
-}
-.sec2 .desc .memo {
-    font-size: 16px;
-    
-}
+.sec2 {position: fixed; left: 0; top: 0; width: 100%; padding: 50vh 0 30vh 0; background: #000;} 
+.sec2 h2 {font-family: 'Anton', sans-serif; font-size: 14vw; padding-left: 5vw; color: #fff;}
 
 
 

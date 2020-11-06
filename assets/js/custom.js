@@ -36,8 +36,6 @@ function hasScroll(){
 
 // #sec1 main text
 setTimeout(function(){
-    gsap.to(".hd", {duration: 0.3 , opacity: 1, stagger: 0.1, y: 1, delay: 0.7});
-    gsap.to(".nav_list", {duration: 0.3 , opacity: 1, stagger: 0.1, y: 1, delay: 1});
     gsap.to(".main strong:nth-child(1) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0});
     gsap.to(".main strong:nth-child(2) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
     gsap.to(".main strong:nth-child(3) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.2});
@@ -45,6 +43,8 @@ setTimeout(function(){
     gsap.to(".main strong:nth-child(5) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.4});
     gsap.to(".main strong:nth-child(6) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
     gsap.to(".main strong:nth-child(7) span", {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.6});
+    gsap.to(".hd", {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.7});
+    gsap.to(".nav_list", {duration: 0.5 , opacity: 1, stagger: 1.5, y: 1, delay: 1});
 },2000)
 
 // .nav
@@ -69,38 +69,60 @@ $(window).scroll(function(){
 
     currentScroll = true;                // #header 나타내기
 
+    // nav 맨처음 클래스 삭제
     if(wScroll < $('#section2').offset().top){
         navBtn.removeClass('current');
     }
+
+    // about  
     if (wScroll >= $('#section2').offset().top - $(window).height()/3){
         navBtn.removeClass('current');
         navBtn.eq(0).addClass('current');
         gsap.to('.about_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         if(wScroll >= $('.about_title h2').offset().top - $(window).height()/3){
-            gsap.to('.title_box h3 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1});
+            gsap.to('.title_box .subtitle span', {duration: 1, opacity: 1, stagger: 0.1, y: 0, delay: 1});
+            gsap.to('.txt_box .title_box .during', {duration: 1, opacity: 1, stagger: 0.5, y: 0, delay: 1.5});
+            gsap.to('.txt_box .a_txt', {duration: 1, opacity: 1, stagger: 0.7, y: 0, delay: 2});
         }
     }
+
+    // possibility
     if(wScroll >= $('#section3').offset().top - $(window).height()/3){
         navBtn.removeClass('current');
         navBtn.eq(1).addClass('current');
+        gsap.to('.possi_title strong span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        if(wScroll >= $('#section3').offset().top- $(window).height()/5){
+            $('.has_ani').each(function(index){
+                $(this).delay($(this).data('delay')).queue(function(){
+                    $(this).addClass('ani_in');
+                });
+            });
+            $('.possi_box .right_box .p_txt').addClass('show');
+            $('.possi_box .right_box .skills').addClass('show');
+            $('.possi_box .right_box .license').addClass('show');
+        }
     }
+
+    // work
     if(wScroll >= $('#section4').offset().top - $(window).height()/3){
         navBtn.removeClass('current');
         navBtn.eq(2).addClass('current');
         gsap.to('.work_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-
     }
+
+    // footer
     if(wScroll >= $('#footer').offset().top - $(window).height()/3){
         navBtn.removeClass('current');
         navBtn.eq(3).addClass('current');
         gsap.to('.footer_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         $('.circle').addClass('rot')
     }
+
+    // nav 색상 변경
     if(wScroll < $('#section4').offset().top - wHeight/3){
         $(".nav_list li a").css("color", "#222222")
     } else{
         $(".nav_list li a").css("color", "#fff")
     }
 });
-
 

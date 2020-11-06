@@ -13,6 +13,8 @@
     <!-- webfotns -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -37,58 +39,27 @@
 
     <section id="contents">
         <section id="section1">
-            <div class="container">
-                <div class="row">
-                    <div class="sec1">
-                        <strong class="splice">PORTFOLIO</strong>
-                        <strong class="splice">LEE BYUNG JU</strong>
-                        <strong class="splice">WEB</strong>
-                        <strong class="splice">DEVOLOPER</strong>
-                        <strong class="splice">LEE BYUNG JU</strong>
-                        <strong class="splice">PORTFOLIO</strong>
-                        <strong class="splice">DEVOLOPER</strong>
-                    </div>
-                </div>
+            <div class="sec1">
+                <strong class="splice">PORTFOLIO</strong>
+                <strong class="splice">LEE BYUNG JU</strong>
+                <strong class="splice outline">WEB PUBLISHER&amp;</strong>
+                <strong class="splice">DEVOLOPER</strong>
+                <strong class="splice">LEE BYUNG JU</strong>
+                <strong class="splice">PUBLISHER</strong>
+                <strong class="splice">DESIGN</strong>
+                <strong class="splice">START</strong>
+                <strong class="splice outline">VERSION.1</strong>
+                <strong class="splice">FIRST</strong>
+                <strong class="splice">PROJECT</strong>
             </div>
         </section>
         <!-- //section1 -->
 
         <section id="section2">
-            <div class="container">
-                <div class="row">
-                    <div class="sec2">
-                        <h2 class="splice">About me</h2>
-                        <div class="desc">
-                            <article>
-                                <h3>코딩을 접하면서.....</h3>
-                                <span class="date">During 2015 - 2019</span>
-                                <p class="memo">바람에 생각나요. 날 항상 감싸줬던 따뜻한 그녀의 품 속이 오늘 참 그리워요. 모두가 그렇 듯이 그녀도 시들었죠. 짓궂게 흐르는 시간이 너무 원망스럽죠. </p>
-                            </article>
-                            <article>
-                                <h3>구조를 알게되다.....</h3>
-                                <span class="date">During 2015 - 2019</span>
-                                <p class="memo">웹에 관심이 많았던 저는 웹디자인을 배우는 과정에서 처음으로 코딩을 접하게 되었습니다. 배워보지도 못한 영역이라 처음엔 개념이 안 잡혀있어서 어려웠지만, 매일매일 메모장에 그날의 수업을 웹 수업 1일 차, 2일 차 이렇게 적어가며 네이버 클라우드에 저장해 집에서도 복습했습니다. 그렇게 배우다 보니 코딩의 매력에 빠져 퍼블리셔라는 직업을 알게 되었습니다.</p>
-                            </article>
-                            <article>
-                                <h3>이런 개발자라면...</h3>
-                                <span class="date">During 2015 - 2019</span>
-                                <p class="memo">바람에 생각나요. 날 항상 감싸줬던 따뜻한 그녀의 품 속이 오늘 참 그리워요. 모두가 그렇 듯이 그녀도 시들었죠. 짓궂게 흐르는 시간이 너무 원망스럽죠.</p>
-                            </article>
-                        </div>
-                        <div class="skill-wrap">
-                            <div class="skill">
-                                <ul class="clearfix">
-                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">90</strong><span>HTML5</span></a></li>
-                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">90</strong><span>CSS3</span></a></li>
-                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">80</strong><span>JAVASCRIPT</span></a></li>
-                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">80</strong><span>JQUERY</span></a></li>
-                                    <li class="pie" data-percent="100"><a href="#" target="_blank"><strong class="count">70</strong><span>PHOTOSHOP</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="sec2">
+                <h2>About me</h2>
+    
+            </div>    
         </section>
         <!-- //section2 -->
         
@@ -119,12 +90,12 @@
             $(this).html(split).attr("aria-label", txt);
         });
         
-        setTimeout(function(){
-            gsap.to(".sec1 strong:nth-child(1) span", {duration: .51, opacity:1, stagger:0.1, y:0})
-            gsap.to(".sec1 strong:nth-child(2) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.1})
-            gsap.to(".sec1 strong:nth-child(3) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.2})
-            gsap.to(".sec1 strong:nth-child(4) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.3})
-        },2000);
+//        setTimeout(function(){
+//            gsap.to(".sec1 strong:nth-child(1) span", {duration: .51, opacity:1, stagger:0.1, y:0})
+//            gsap.to(".sec1 strong:nth-child(2) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.1})
+//            gsap.to(".sec1 strong:nth-child(3) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.2})
+//            gsap.to(".sec1 strong:nth-child(4) span", {duration: .51, opacity:1, stagger:0.1, y:0, delay: 0.3})
+//        },2000);
         
         
         $(window).scroll(function(){
