@@ -340,8 +340,9 @@ body {background: var(--color-white);}
 
 .possi_box .right_box .license {
     opacity: 0;
-    padding-right: 40%;
+    padding-left: 40%;
     flex-basis: 15%;
+    text-align: right;
     transform: translateY(80%);
     -webkit-transform: translateY(80%);
     -moz-transform: translateY(80%);
