@@ -74,13 +74,12 @@ $(window).scroll(function(){
     currentScroll = true;                // #header 나타내기
 
     // nav 맨처음 클래스 삭제
-    if(wScroll < $('#section1').offset().top){
+    if(wScroll < $('#section2').offset().top){
         navBtn.removeClass('current');
     }
 
     // about  
-    if (wScroll >= $('#section1').offset().top - $(window).height()/3){
-        navBtn.removeClass('current');
+    if (wScroll >= $('#section2').offset().top){
         navBtn.eq(0).addClass('current');
         gsap.to('.about_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         if(wScroll >= $('#section2').offset().top - $(window).height()/3){
@@ -98,34 +97,11 @@ $(window).scroll(function(){
             }
         }
 
-        // skill
-        if(wScroll >= $('#section2').offset().top - $(window).height()/5){
+        // section3
+        if(wScroll >= $('#section2').offset().top - $(window).height()/3){
             navBtn.removeClass('current');
             navBtn.eq(1).addClass('current');
         }
-            // if(wScroll >= $('.about_title h2').offset().top - $(window).height()/3){
-            //     gsap.to('.title_box .subtitle span', {duration: 1, opacity: 1, stagger: 0.1, y: 0, delay: 1});
-            //     gsap.to('.txt_box .title_box .during', {duration: 1, opacity: 1, stagger: 0.5, y: 0, delay: 1.5});
-            //     gsap.to('.txt_box .a_txt', {duration: 1, opacity: 1, stagger: 0.7, y: 0, delay: 2});
-            // }
-
-
-    // possibility
-    // if(wScroll >= $('#section2').offset().top - $(window).height()/5){
-    //     navBtn.removeClass('current');
-    //     navBtn.eq(1).addClass('current');
-    //     gsap.to('.possi_title strong span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-    //     if(wScroll >= $('#section2').offset().top- $(window).height()/7){
-    //         $('.has_ani').each(function(index){
-    //             $(this).delay($(this).data('delay')).queue(function(){
-    //                 $(this).addClass('ani_in');
-    //             });
-    //         });
-    //         $('.possi_box .right_box .p_txt').addClass('show');
-    //         $('.possi_box .right_box .skills').addClass('show');
-    //         $('.possi_box .right_box .license').addClass('show');
-    //     }
-    // }
 
     // work
     if(wScroll >= $('#section4').offset().top - $(window).height()/3){
@@ -150,6 +126,7 @@ $(window).scroll(function(){
     }
 });
 
+/* sec3 패널
 const panels = document.querySelectorAll(".panel");
 
 function toggleOpen() {
@@ -170,4 +147,16 @@ panels.forEach(panel => {
     panel.addEventListener("click", toggleOpen);
     panel.addEventListener("transitionend", toggleActive);
 });
+*/
 
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTopPlugin);
+gsap.registerPlugin(SplitText);
+
+select = e => document.querySelector(e);
+selectAll = e => document.querySelectorAll(e);
+
+const slides = selectAll(".slide");
+const links = selectAll(".next_slide");
+const titles = selectAll(".cont_title")

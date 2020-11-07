@@ -107,6 +107,13 @@
                 gsap.to(".sec2 h2 span", {duration:.5, y:0, stagger: 0.1, opacity: 1, rotation: 0});
             }
             
+            if( scroll > $("#section4").offset().top - $(window).height()){
+                $("#section4").css("background","red");
+                $(".sec2").hide();
+            } else {
+                $(".sec2").show();
+            }
+            
         });
         
         

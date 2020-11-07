@@ -26,9 +26,9 @@
 /* layout */
 #contents {}
 #section1 {position: relative; z-index: 10000; background: #F0F0F0;}
-#section2 {position: relative; z-index: 9000; background: #F0F0F0; height: 4000px;}
+#section2 {position: relative; z-index: 9000; background: #F0F0F0; height: 4000px; width: 90%;}
 #section3 {position: relative; z-index: 9100; background: #F0F0F0; height: 4000px;}
-#section4 {}
+#section4 {position: relative; z-index: 8000; background: blue; height: 4000px;}
 #section5 {}
 
 /* container */
@@ -88,7 +88,7 @@
 }
 
 /* sec2 */
-.sec2 {position: fixed; left: 0; top: 0; width: 100%; padding: 50vh 0 30vh 0; background: #000;} 
+.sec2 {position: fixed; left: 0; top: 0; width: 90%; padding: 50vh 0 30vh 0; background: #000;} 
 .sec2 h2 {font-family: 'Anton', sans-serif; font-size: 14vw; padding-left: 5vw; color: #fff;}
 
 
