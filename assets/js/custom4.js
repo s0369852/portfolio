@@ -20,8 +20,8 @@ $(window).scroll(function(){
     // }
 
     if( scroll > $("#section7").offset().top - $(window).height()){
-        $(".footer").show();    
+        $("#footer").show();    
     } else {
-        $(".footer").hide();
+        $("#footer").hide();
     }
 });

@@ -104,6 +104,14 @@ body {background: var(--color-white);}
 }
 
 #section6 {
+    z-index: 9200;
+    width: 100%; 
+    position: relative; 
+    padding-top: 20vh; 
+    background-color: var(--color-back);
+}
+
+#section7 {
     z-index: 9100;
     margin: 20vw 0;
     position: relative;
@@ -111,15 +119,8 @@ body {background: var(--color-white);}
     background-color: var(--color-white);
 }
 
-#section7 {
-    z-index: 9200;
-    width: 100%; 
-    position: relative; 
-    padding-top: 20vh; 
-    background-color: var(--color-back);
-}
 #footer {
-    z-index: 9400;
+    z-index: 9000;
     width: 100%;
     height: 100vh; 
     color: var(--color-white);
