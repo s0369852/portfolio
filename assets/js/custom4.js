@@ -165,12 +165,60 @@ $(window).scroll(function(){
         navBtn.eq(2).addClass('on');
         gsap.to('.work_title h2 span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         if( scrollTop > $('.w_box1').offset().top){
-            gsap.to('.w_box .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            gsap.to('.w_box1 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
             $('.w_box1 .title_box').addClass('show');
             $('.w_box1 .t_box .left_box .subtitle h4').addClass('show');
             $('.w_box1 .t_box .left_box .w_txt').addClass('show');
             $('.w_box1 .t_box .left_box .sBtn').addClass('show');
             $('.w_box1 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box2').offset().top){
+            gsap.to('.w_box2 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box2 .title_box').addClass('show');
+            $('.w_box2 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box2 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box2 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box2 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box3').offset().top){
+            gsap.to('.w_box3 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box3 .title_box').addClass('show');
+            $('.w_box3 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box3 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box3 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box3 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box4').offset().top){
+            gsap.to('.w_box4 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box4 .title_box').addClass('show');
+            $('.w_box4 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box4 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box4 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box4 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box5').offset().top){
+            gsap.to('.w_box5 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box5 .title_box').addClass('show');
+            $('.w_box5 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box5 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box5 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box5 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box6').offset().top){
+            gsap.to('.w_box6 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box6 .title_box').addClass('show');
+            $('.w_box6 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box6 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box6 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box6 .t_box .right_box').addClass('show');
+        }
+        if( scrollTop > $('.w_box7').offset().top){
+            gsap.to('.w_box7 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            $('.w_box7 .title_box').addClass('show');
+            $('.w_box7 .t_box .left_box .subtitle h4').addClass('show');
+            $('.w_box7 .t_box .left_box .w_txt').addClass('show');
+            $('.w_box7 .t_box .left_box .sBtn').addClass('show');
+            $('.w_box7 .t_box .right_box').addClass('show');
         }
     }
 
