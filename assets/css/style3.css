@@ -857,6 +857,136 @@ body {
     opacity: 1;
 }
 
+.w_box .t_box .right_box figure {
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -webkit-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -moz-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -ms-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -o-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.w_box .t_box .right_box figure:hover {
+    transform: scale(1.05) skewY(-1deg);
+    -webkit-transform: scale(1.05) skewY(-1deg);
+    -moz-transform: scale(1.05) skewY(-1deg);
+    -ms-transform: scale(1.05) skewY(-1deg);
+    -o-transform: scale(1.05) skewY(-1deg);
+}
+
+.w_box .t_box .right_box figure img {
+    width: 100%;
+    height: auto;
+    box-shadow: var(--color-dark);
+    animation: popInImg 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1s forwards;
+    -webkit-animation: popInImg 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    transform: skewY(1deg);
+    -webkit-transform: skewY(1deg);
+    -moz-transform: skewY(1deg);
+    -ms-transform: skewY(1deg);
+    -o-transform: skewY(1deg);
+}
+
+.w_box .t_box .right_box figure figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.1s ease-in;
+    -webkit-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.1s ease-in;
+    -moz-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.1s ease-in;
+    -ms-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.1s ease-in;
+    -o-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.1s ease-in;
+}
+
+.w_box .t_box .right_box figure:hover figcaption {
+    opacity: 0;
+    transform: scale(0.91);
+    -webkit-transform: scale(0.91);
+    -moz-transform: scale(0.91);
+    -ms-transform: scale(0.91);
+    -o-transform: scale(0.91);
+}
+
+@keyframes popInImg {
+    0% {
+        opacity: 0;
+        transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
+        -webkit-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
+        -moz-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
+        -ms-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
+        -o-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.w_box .t_box .right_box figure figcaption span {
+    position: absolute;
+    display: block;
+    background-image: linear-gradient(-55deg, #8fc2c9 0% #bee0e5 100%);
+    text-shadow: 0px 21px 32px 0px rgba(8, 40, 34, 0.8);
+    opacity: 0;
+    transform: skewY(-13deg);
+    -webkit-transform: skewY(-13deg);
+    -moz-transform: skewY(-13deg);
+    -ms-transform: skewY(-13deg);
+    -o-transform: skewY(-13deg);
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1 forwards;
+    -webkit-animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1 forwards;
+}
+
+@keyframes popIn {
+    0%, 13% {
+        opacity: 0;
+        transform: scaleX(0.89) scaleY(0.75);
+        -webkit-transform: scaleX(0.89) scaleY(0.75);
+        -moz-transform: scaleX(0.89) scaleY(0.75);
+        -ms-transform: scaleX(0.89) scaleY(0.75);
+        -o-transform: scaleX(0.89) scaleY(0.75);
+    }
+    100% {
+        transform: skewY(-13deg);
+        opacity: 1;
+        -webkit-transform: skewY(-13deg);
+        -moz-transform: skewY(-13deg);
+        -ms-transform: skewY(-13deg);
+        -o-transform: skewY(-13deg);
+    }
+}
+
+.w_box .t_box .right_box figure figcaption span:nth-of-type(1){
+    top: -44px;
+    left: 44px;
+    font-size: 21px;
+    animation-delay: calc( 0.5s + 1 * 0.1s );
+}
+
+.w_box .t_box .right_box figure figcaption span:nth-of-type(2){
+    top: -34px;
+    left: -21px;
+    font-size: 89px;
+    animation-delay: calc( 0.5s + 2 * 0.1s );
+}
+
+.w_box .t_box .right_box figure figcaption span:nth-of-type(3){
+    top: -38px;
+    left: -21px;
+    font-size: 89px;
+    animation-delay: calc( 0.5s + 3 * 0.1s );
+}
+
+.w_box .t_box .right_box figure figcaption span:nth-of-type(1){
+    top: -50px;
+    left: -21px;
+    font-size: 21px;
+    animation-delay: calc( 0.5s + 4 * 0.1s );
+}
+
 .ani_box .t_box .right_box iframe {
     width: 100%;
     height: 100%;
