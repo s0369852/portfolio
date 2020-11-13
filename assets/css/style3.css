@@ -930,6 +930,7 @@ body {
     display: block;
     background-image: linear-gradient(-55deg, #8fc2c9 0% #bee0e5 100%);
     text-shadow: 0px 21px 32px 0px rgba(8, 40, 34, 0.8);
+    font-family: 'Anton', sans-serif;
     opacity: 0;
     transform: skewY(-13deg);
     -webkit-transform: skewY(-13deg);
@@ -974,15 +975,15 @@ body {
 }
 
 .w_box .t_box .right_box figure figcaption span:nth-of-type(3){
-    top: -38px;
-    left: -21px;
+    bottom: -38px;
+    right: -21px;
     font-size: 89px;
     animation-delay: calc( 0.5s + 3 * 0.1s );
 }
 
-.w_box .t_box .right_box figure figcaption span:nth-of-type(1){
-    top: -50px;
-    left: -21px;
+.w_box .t_box .right_box figure figcaption span:nth-of-type(4){
+    bottom: -50px;
+    right: -21px;
     font-size: 21px;
     animation-delay: calc( 0.5s + 4 * 0.1s );
 }
