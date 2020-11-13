@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, minimum-scale= 1.0, user-scalable= no">
+    <title>Tail Animation</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="#">
+
+    <!-- css -->
+<style>
+
+    * {margin: 0; padding: 0;}
+
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #4dd0e1 10% , #9575cd 90% );
+}
+
+.circle {
+    position: absolute;
+    animation: movex 1s ease-in-out alternate infinite;
+    -webkit-animation: movex 1s ease-in-out alternate infinite;
+}
+
+.circle > div {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: movey 1s linear infinite;
+    -webkit-animation: movey 1s linear infinite;
+}
+
+.circle:nth-of-type(2) > div {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8; 
+}
+
+.circle:nth-of-type(3) > div {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+}
+
+.circle:nth-of-type(4) > div {
+    width: 20px;
+    height: 20px;
+    opacity: 0.4;
+}
+
+.circle:nth-of-type(5) > div {
+    width: 10px;
+    height: 10px;
+    opacity: 0.2;
+}
+
+.circle:nth-of-type(2),
+.circle:nth-of-type(2) > div {
+    animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3),
+.circle:nth-of-type(3) > div {
+    animation-delay: 0.2s;
+}
+
+.circle:nth-of-type(4),
+.circle:nth-of-type(4) > div {
+    animation-delay: 0.3s;
+}
+
+.circle:nth-of-type(5),
+.circle:nth-of-type(5) > div {
+    animation-delay: 0.4s;
+}
+
+
+
+@keyframes movex {
+    0% {
+        transform: translate(-100px, 0);
+        -webkit-transform: translate(-100px, 0);
+        -moz-transform: translate(-100px, 0);
+        -ms-transform: translate(-100px, 0);
+        -o-transform: translate(-100px, 0);
+}
+    50% {
+        transform: translate(0px, 0);
+        -webkit-transform: translate(0px, 0);
+        -moz-transform: translate(0px, 0);
+        -ms-transform: translate(0px, 0);
+        -o-transform: translate(0px, 0);
+}
+
+    100% {
+        transform: translate(100px, 0);
+        -webkit-transform: translate(100px, 0);
+        -moz-transform: translate(100px, 0);
+        -ms-transform: translate(100px, 0);
+        -o-transform: translate(100px, 0);
+}
+}
+
+@keyframes movey {
+    0% {
+        transform:translate(0, 0) ;
+        -webkit-transform:translate(0, 0) ;
+        -moz-transform:translate(0, 0) ;
+        -ms-transform:translate(0, 0) ;
+        -o-transform:translate(0, 0) ;
+}
+    25% {
+        background-color: #f8bbd0;
+        transform: translate(0, -100px);
+        -webkit-transform: translate(0, -100px);
+        -moz-transform: translate(0, -100px);
+        -ms-transform: translate(0, -100px);
+        -o-transform: translate(0, -100px);
+}
+    50% {
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+}
+    75% {
+        background-color: #f06292;
+        transform:translate(0, 100px) ;
+        -webkit-transform:translate(0, 100px) ;
+        -moz-transform:translate(0, 100px) ;
+        -ms-transform:translate(0, 100px) ;
+        -o-transform:translate(0, 100px) ;
+}
+    100% {
+        transform:translate(0, 0) ;
+        -webkit-transform:translate(0, 0) ;
+        -moz-transform:translate(0, 0) ;
+        -ms-transform:translate(0, 0) ;
+        -o-transform:translate(0, 0) ;
+}
+}
+</style>
+
+</head>
+<body>
+    
+    <div class="circle">
+        <div></div>
+    </div>
+    <div class="circle">
+        <div></div>
+    </div>
+    <div class="circle">
+        <div></div>
+    </div>
+    <div class="circle">
+        <div></div>
+    </div>
+    <div class="circle">
+        <div></div>
+    </div>
+
+</body>
+</html>

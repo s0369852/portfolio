@@ -6,6 +6,7 @@
     <title>portfolio</title>
 
     <!-- css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style3.css">
 
@@ -41,9 +42,9 @@
 
     <nav id="nav">
         <ul class="nav_list">
-            <li><a href="#section2">About</a></li>
-            <li><a href="#section3">Skills</a></li>
-            <li><a href="#section7">Works</a></li>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section3">About</a></li>
+            <li><a href="#section6">Works</a></li>
             <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
@@ -338,7 +339,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="w_box w_box5">
+                            <article class="w_box ani_box a1">
                                 <div class="title_box">
                                     <h3>05</h3>
                                 </div>
@@ -363,19 +364,448 @@
                                             </p>
                                         </div>
                                         <div class="sBtn">
-                                            <a href="http://s0369852.dothome.co.kr/webstandard/index.html" target="_blank">SITE View</a>
+                                            <a href="#">SITE View</a>
                                         </div>
                                     </div>
                                     <div class="right_box">
-                                        <figure>
-                                            <img src="assets/img/kream.png" alt="작업물">
-                                        </figure>
+                                        <iframe src="assets/ani/tail_animation.html">
+                                            <!DOCTYPE html>
+                                            <html lang="ko">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, minimum-scale= 1.0, user-scalable= no">
+                                                <title>Tail Animation</title>
+
+                                                <!-- 파비콘 -->
+                                                <link rel="shortcut icon" href="#">
+
+                                                <!-- css -->
+                                                <style>
+                                                    body {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    width: 100vw;
+                                                    height: 100vh;
+                                                    background-image: linear-gradient(to bottom, #4dd0e1 10% , #9575cd 90% );
+                                                }
+
+                                                .circle {
+                                                    position: absolute;
+                                                    animation: movex 1s ease-in-out alternate infinite;
+                                                    -webkit-animation: movex 1s ease-in-out alternate infinite;
+                                                }
+
+                                                .circle > div {
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    background-color: #ffffff;
+                                                    border-radius: 50%;
+                                                    -webkit-border-radius: 50%;
+                                                    -moz-border-radius: 50%;
+                                                    -ms-border-radius: 50%;
+                                                    -o-border-radius: 50%;
+                                                    animation: movey 1s linear infinite;
+                                                    -webkit-animation: movey 1s linear infinite;
+                                                }
+
+                                                .circle:nth-of-type(2) > div {
+                                                    width: 40px;
+                                                    height: 40px;
+                                                    opacity: 0.8; 
+                                                }
+
+                                                .circle:nth-of-type(3) > div {
+                                                    width: 30px;
+                                                    height: 30px;
+                                                    opacity: 0.6;
+                                                }
+
+                                                .circle:nth-of-type(4) > div {
+                                                    width: 20px;
+                                                    height: 20px;
+                                                    opacity: 0.4;
+                                                }
+
+                                                .circle:nth-of-type(5) > div {
+                                                    width: 10px;
+                                                    height: 10px;
+                                                    opacity: 0.2;
+                                                }
+
+                                                .circle:nth-of-type(2),
+                                                .circle:nth-of-type(2) > div {
+                                                    animation-delay: 0.1s;
+                                                }
+
+                                                .circle:nth-of-type(3),
+                                                .circle:nth-of-type(3) > div {
+                                                    animation-delay: 0.2s;
+                                                }
+
+                                                .circle:nth-of-type(4),
+                                                .circle:nth-of-type(4) > div {
+                                                    animation-delay: 0.3s;
+                                                }
+
+                                                .circle:nth-of-type(5),
+                                                .circle:nth-of-type(5) > div {
+                                                    animation-delay: 0.4s;
+                                                }
+
+
+
+                                                @keyframes movex {
+                                                    0% {
+                                                        transform: translate(-100px, 0);
+                                                        -webkit-transform: translate(-100px, 0);
+                                                        -moz-transform: translate(-100px, 0);
+                                                        -ms-transform: translate(-100px, 0);
+                                                        -o-transform: translate(-100px, 0);
+                                                }
+                                                    50% {
+                                                        transform: translate(0px, 0);
+                                                        -webkit-transform: translate(0px, 0);
+                                                        -moz-transform: translate(0px, 0);
+                                                        -ms-transform: translate(0px, 0);
+                                                        -o-transform: translate(0px, 0);
+                                                }
+
+                                                    100% {
+                                                        transform: translate(100px, 0);
+                                                        -webkit-transform: translate(100px, 0);
+                                                        -moz-transform: translate(100px, 0);
+                                                        -ms-transform: translate(100px, 0);
+                                                        -o-transform: translate(100px, 0);
+                                                }
+                                                }
+
+                                                @keyframes movey {
+                                                    0% {
+                                                        transform:translate(0, 0) ;
+                                                        -webkit-transform:translate(0, 0) ;
+                                                        -moz-transform:translate(0, 0) ;
+                                                        -ms-transform:translate(0, 0) ;
+                                                        -o-transform:translate(0, 0) ;
+                                                }
+                                                    25% {
+                                                        background-color: #f8bbd0;
+                                                        transform: translate(0, -100px);
+                                                        -webkit-transform: translate(0, -100px);
+                                                        -moz-transform: translate(0, -100px);
+                                                        -ms-transform: translate(0, -100px);
+                                                        -o-transform: translate(0, -100px);
+                                                }
+                                                    50% {
+                                                        transform: translate(0, 0);
+                                                        -webkit-transform: translate(0, 0);
+                                                        -moz-transform: translate(0, 0);
+                                                        -ms-transform: translate(0, 0);
+                                                        -o-transform: translate(0, 0);
+                                                }
+                                                    75% {
+                                                        background-color: #f06292;
+                                                        transform:translate(0, 100px) ;
+                                                        -webkit-transform:translate(0, 100px) ;
+                                                        -moz-transform:translate(0, 100px) ;
+                                                        -ms-transform:translate(0, 100px) ;
+                                                        -o-transform:translate(0, 100px) ;
+                                                }
+                                                    100% {
+                                                        transform:translate(0, 0) ;
+                                                        -webkit-transform:translate(0, 0) ;
+                                                        -moz-transform:translate(0, 0) ;
+                                                        -ms-transform:translate(0, 0) ;
+                                                        -o-transform:translate(0, 0) ;
+                                                }
+                                                }
+                                                </style>
+
+                                            </head>
+                                            <body>
+                                                
+                                                <div class="circle">
+                                                    <div></div>
+                                                </div>
+                                                <div class="circle">
+                                                    <div></div>
+                                                </div>
+                                                <div class="circle">
+                                                    <div></div>
+                                                </div>
+                                                <div class="circle">
+                                                    <div></div>
+                                                </div>
+                                                <div class="circle">
+                                                    <div></div>
+                                                </div>
+
+                                            </body>
+                                            </html>
+                                        </iframe>
+                                    </div>
+                                    <div id="modal">
+                                        <div class="modal_bg">
+                                            <div class="modal_cont">
+                                                <div class="modal_wrap">
+                                                    <iframe height="480" style="width: 100%;" scrolling="no" title="CSS3 Animation - Tail Animation" src="https://codepen.io/s0369852/embed/eYzWZyL?height=479&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                                        See the Pen <a href='https://codepen.io/s0369852/pen/eYzWZyL'>CSS3 Animation - Tail Animation</a> by s0369852
+                                                        (<a href='https://codepen.io/s0369852'>@s0369852</a>) on <a href='https://codepen.io'>CodePen</a>.
+                                                    </iframe>
+                                                    <a href="#" class="close">
+                                                        <span><i class="fas fa-backspace"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
-                            <article class="w_box w_box6">
+                            <article class="w_box ani_box a2">
                                 <div class="title_box">
                                     <h3>06</h3>
+                                </div>
+                                <div class="t_box">
+                                    <div class="left_box">
+                                        <div class="subtitle">
+                                            <h4>
+                                                <span>ANIMATION</span>
+                                                <em>
+                                                    Standards, Accessibility, Image Sprite, <br>
+                                                    jQuery plugin, Image Replacement
+                                                </em>
+                                            </h4>
+                                        </div>
+                                        <div class="w_txt">
+                                            <p>
+                                                Skip-menu / Cross Browsing / <br>
+                                                Gallery / Mousehover / Layerpopup / <br>
+                                                WindowPopup <br>
+                                                html5 / css3 / jquery / figma / <br>
+                                                photoshop / github 
+                                            </p>
+                                        </div>
+                                        <div class="sBtn">
+                                            <a href="#">SITE View</a>
+                                        </div>
+                                    </div>
+                                    <div class="right_box">
+                                        <iframe src="assets/ani/cube_animation.html">
+                                            <!DOCTYPE html>
+                                            <html lang="ko">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, minimum-scale= 1.0, user-scalable= no">
+                                                <title>Tail Animation</title>
+
+                                                <!-- 파비콘 -->
+                                                <link rel="shortcut icon" href="#">
+
+                                                <!-- css -->
+                                                <style>
+
+                                                * {
+                                                    margin:0;
+                                                    padding:0;
+                                                    box-sizing:border-box;
+                                                }
+
+                                                body {
+                                                    background-color: #88d3ce;
+                                                    height: 100vh;
+                                                    perspective: 1000px;
+                                                    display: flex;
+                                                    justify-content:center;
+                                                    align-items:center;
+                                                    margin:auto
+                                                }
+                                                /* 3d로 보일려면 원근점이 필요하다, z축이 필요로 함.
+                                                기본 원근 점이 있어야 그 점을 기준으로 움직인다. 
+                                                -> perspective*/
+
+                                                .cube {
+                                                    position: relative;
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    transform-style: preserve-3d;
+                                                    transform: rotateX(-20deg) rotateY(-140deg);
+                                                    animation: rotate 8s linear infinite;
+                                                /*   background-color: #fff; */
+                                                }
+                                                /* 3d를 사용하려면 transform-style: preserve-3d 을 선언해줘야 한다. */
+
+                                                .cube div {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center; 
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0; 
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    opacity: 0.7;
+                                                    /*   color: #fff; */
+                                                }
+
+                                                .cube div:nth-child(1) {
+                                                    background-color: #ee4999;
+                                                    transform-origin: center top;
+                                                    transform: rotatex(90deg) translatey(-100px);
+                                                    animation: top 4s ease-in-out 8s infinite;
+                                                }
+                                                /* transform-origin: center top; 기준점을 잡아준 것 center에서 topr으로   */
+
+                                                .cube div:nth-child(2) {
+                                                    background-color: #c71d6f;
+                                                    transform-origin: center bottom;
+                                                    transform: rotatex(-90deg) translatey(100px);
+                                                    animation: bottom 4s ease-in-out 8s infinite;
+                                                }
+
+                                                .cube div:nth-child(3) {
+                                                    background-color: #9c0f53;
+                                                    transform-origin: left center;
+                                                    transform: rotatey(-90deg) translatex(-100px);
+                                                    animation: left 4s ease-in-out 8s infinite;
+                                                }
+
+                                                .cube div:nth-child(4) {
+                                                    background-color: #9a3b69;
+                                                    transform-origin: right center;
+                                                    transform: rotatey(90deg) translatex(100px);
+                                                    animation: right 4s ease-in-out 8s infinite;
+                                                }
+
+                                                .cube div:nth-child(5) {
+                                                    background-color: #b50e5f;
+                                                    transform-origin: center center;
+                                                    transform: rotatey(0deg) translatex(0);
+                                                    animation: front 4s ease-in-out 8s infinite;
+                                                }
+
+                                                .cube div:nth-child(6) {
+                                                    background-color: #961c57;
+                                                    transform-origin: center center;
+                                                    transform: rotatey(180deg) translatez(100px);
+                                                    animation: back 4s ease-in-out 8s infinite;
+                                                }
+
+                                                @keyframes rotate {
+                                                0% {
+                                                    transform: rotatex(0) rotatey(0) rotatez(0) translatez(0);
+                                                }
+                                                100% {
+                                                    transform: rotatex(270deg) rotatey(180deg) rotatez(360deg) translatez(0);
+                                                }
+                                                }
+
+                                                @keyframes top {
+                                                0% {
+                                                    transform: rotatex(90deg) translatey(-100px) translatez(0);
+                                                }
+                                                50% {transform: rotatex(90deg) translatey(-100px) translatez(100px);}
+                                                100% {transform: rotatex(90deg) translatey(-100px) translatez(0);}
+                                                }
+
+                                                @keyframes bottom {
+                                                0% {
+                                                    transform: rotatex(-90deg) translatey(100px) translatez(0);
+                                                }
+                                                50% {
+                                                    transform: rotatex(-90deg) translatey(100px) translatez(100px);
+                                                }
+                                                100% {
+                                                    transform: rotatex(-90deg) translatey(100px) translatez(0);
+                                                }
+                                                }
+
+                                                @keyframes left {
+                                                0% {
+                                                    transform: rotatey(-90deg) translatex(-100px) scaley(1);
+                                                }
+                                                50% {
+                                                    transform: rotatey(-90deg) translatex(-100px) scaley(3);
+                                                }
+                                                100% {
+                                                    transform: rotatey(-90deg) translatex(-100px) scaley(1);
+                                                }
+                                                /* 늘어나는 옆면을 width값이 아닌 scale값으로 사용했다. */
+                                                }
+
+                                                @keyframes right {
+                                                0% {
+                                                transform: rotatey(90deg) translatex(100px) scaley(1);
+                                                }
+                                                50% {
+                                                    transform: rotatey(90deg) translatex(100px) scaley(3);
+                                                }
+                                                100% {
+                                                    transform: rotatey(90deg) translatex(100px) scaley(1);
+                                                }
+                                                }
+
+                                                @keyframes front {
+                                                0% {
+                                                    transform: rotatex(0deg) translateX(0px) scaley(1);
+                                                }
+                                                50% {
+                                                    transform: rotatex(0deg) translatex(0px) scaley(3);
+                                                }
+                                                100% {
+                                                    transform: rotatex(0deg) translatex(0px) scaley(1);
+                                                }
+                                                /* 앞면은 제자리이기 때문에 0 */
+                                                }
+
+                                                @keyframes back {
+                                                0% {
+                                                    transform: rotatey(180deg) translatez(100px) scaley(1);
+                                                }
+                                                50% {
+                                                    transform: rotatey(180deg) translatez(100px) scaley(3);
+                                                }
+                                                100% {
+                                                    transform: rotatey(180deg) translatez(100px) scaley(1);
+                                                }
+                                                }
+                                                </style>
+
+                                            </head>
+                                            <body>
+                                                
+                                                <div class="cube">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+
+                                            </body>
+                                            </html>
+                                        </iframe>
+                                    </div>
+                                    <div id="modal">
+                                        <div class="modal_bg">
+                                            <div class="modal_cont">
+                                                <div class="modal_wrap">
+                                                    <iframe height="480" style="width: 100%;" scrolling="no" title="Cube Animation" src="https://codepen.io/s0369852/embed/jOrZRMB?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                                        See the Pen <a href='https://codepen.io/s0369852/pen/jOrZRMB'>Cube Animation</a> by s0369852
+                                                        (<a href='https://codepen.io/s0369852'>@s0369852</a>) on <a href='https://codepen.io'>CodePen</a>.
+                                                    </iframe>
+                                                    <a href="#" class="close">
+                                                        <span><i class="fas fa-backspace"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="w_box script_box">
+                                <div class="title_box">
+                                    <h3>07</h3>
                                 </div>
                                 <div class="t_box">
                                     <div class="left_box">
