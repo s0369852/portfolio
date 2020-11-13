@@ -832,7 +832,6 @@ body {
 }
 
 .w_box .t_box .right_box {
-    overflow: hidden;
     padding-top: 1.2vw;
     padding-left: 4%;
     opacity: 0;
@@ -914,13 +913,14 @@ body {
 @keyframes popInImg {
     0% {
         opacity: 0;
+        
+    }
+    100% {
         transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
         -webkit-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
         -moz-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
         -ms-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
         -o-transform: skewY(5deg) scaleX(0.89) scaleY(0.89);
-    }
-    100% {
         opacity: 1;
     }
 }
@@ -944,19 +944,20 @@ body {
 @keyframes popIn {
     0%, 13% {
         opacity: 0;
+        transform: skewY(-13deg);
+        -webkit-transform: skewY(-13deg);
+        -moz-transform: skewY(-13deg);
+        -ms-transform: skewY(-13deg);
+        -o-transform: skewY(-13deg);
+        
+    }
+    100% {
+        opacity: 1;
         transform: scaleX(0.89) scaleY(0.75);
         -webkit-transform: scaleX(0.89) scaleY(0.75);
         -moz-transform: scaleX(0.89) scaleY(0.75);
         -ms-transform: scaleX(0.89) scaleY(0.75);
         -o-transform: scaleX(0.89) scaleY(0.75);
-    }
-    100% {
-        transform: skewY(-13deg);
-        opacity: 1;
-        -webkit-transform: skewY(-13deg);
-        -moz-transform: skewY(-13deg);
-        -ms-transform: skewY(-13deg);
-        -o-transform: skewY(-13deg);
     }
 }
 
