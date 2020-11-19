@@ -1,4 +1,45 @@
 
+// progress
+    function imagesProgress(){
+        var $container = $("#progress"),
+            $progressText = $container.find(".progress-text"),
+            imgLoad = imagesLoaded('body'),	
+            imgTotal = imgLoad.images.length,	
+            imgLoaded = 0,										
+            current = 0,							
+            progressTimer = setInterval(updateProgress, 2000 / 60);	
+
+            imgLoad.on("progress", function(){
+                imgLoaded++;
+            });
+
+        function updateProgress(){
+            var target = ( imgLoaded / imgTotal) * 100;
+
+            current += ( target - current) * 0.1;
+            $progressText.text( Math.floor(current) + '%' );
+
+            if(current >= 100){
+                clearInterval(progressTimer);
+                $container.animate({opacity: '0'},1500,'easeInOutQuint').animate({top: '-100%'},1500);
+
+                let tl = gsap.timeline();
+                tl.fromTo("#header .hd_bg span", {opacity:0, y: 100}, {opacity:1, y: 0, duration: 0.4, delay: 2, stagger: 0.1, ease: "power2.inOut"});
+                tl.to("#header .hd_bg strong span", {fontSize: "10vw", delay: 0.5, y: 0, ease: "power2.inOut"});
+                tl.to("#header .hd_bg em span", {fontSize: "4vw", delay: 0.5, y: 0,  ease: "power2.inOut"});
+                tl.to("#header .hd_bg em", {left: "-20vw", delay: 0.5, ease: "power2.inOut"});
+                tl.to("#header .hd_bg strong", {left: "25vw", delay: 0.5, ease: "power2.inOut"});
+                tl.to("#header .hd_bg", {opacity: 0, delay: 0.5, ease: "power2.inOut"});
+                tl.to('.hd', {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.3});
+            }
+            if(current > 99.9){
+                current = 100;
+            };
+        };
+    };
+
+    imagesProgress();
+
 // header
 let wHeight = $(window).height();       // 보이는 화면의 높이값 (브라우저의 height)
 let dHeight = $(document).height();     // 문서 전체의 높이값 (문서(document)의 높이값)
@@ -33,23 +74,6 @@ $('.splice').each(function(){
         split = '<span aria-hidden="true">' + split + '</span>';
     $(this).html(split).attr('aria-label', txt);
 });
-
-// #sec1 main text
-setTimeout(function(){
-    gsap.to('.main strong:nth-child(1) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0});
-    gsap.to('.main strong:nth-child(2) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
-    gsap.to('.main strong:nth-child(3) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
-    gsap.to('.main strong:nth-child(4) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.7});
-    gsap.to('.main strong:nth-child(5) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.9});
-    gsap.to('.main strong:nth-child(6) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1});
-    gsap.to('.main strong:nth-child(7) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.1});
-    gsap.to('.main strong:nth-child(8) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.3});
-    gsap.to('.main strong:nth-child(9) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.5});
-    gsap.to('.main strong:nth-child(10) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.7});
-    gsap.to('.main strong:nth-child(11) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.9});
-    gsap.to('.hd', {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.7});
-    gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 1.5, y: 1, delay: 1});
-},2000) 
 
 // .nav
 let navBtn = $('.nav_list li');
@@ -99,6 +123,23 @@ $(window).scroll(function(){
     } 
     if( scrollTop > $('#footer').offset().top ){
         $(".nav_list li a").css("color", "#F0F0F0")
+    }
+
+    //section1. main
+    if( scrollTop >= $('#header').offset().top ){
+        $("#section1").addClass("show");
+        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 1.5, y: 1, delay: 0.7});
+        gsap.to('.main strong:nth-child(1) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0});
+        gsap.to('.main strong:nth-child(2) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
+        gsap.to('.main strong:nth-child(3) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
+        gsap.to('.main strong:nth-child(4) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.7});
+        gsap.to('.main strong:nth-child(5) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.9});
+        gsap.to('.main strong:nth-child(6) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1});
+        gsap.to('.main strong:nth-child(7) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.1});
+        gsap.to('.main strong:nth-child(8) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.3});
+        gsap.to('.main strong:nth-child(9) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.5});
+        gsap.to('.main strong:nth-child(10) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.7});
+        gsap.to('.main strong:nth-child(11) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.9});
     }
 
     // section2 .about

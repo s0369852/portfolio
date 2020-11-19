@@ -31,6 +31,7 @@
     <script defer src="assets/js/jquery-ui-1.12.1.min.js"></script>
     <script defer src="assets/js/modernizr-custom.js"></script>
     <script defer src="assets/js/html5shiv.min.js"></script>
+    <script defer src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script defer src="assets/js/custom4.js"></script>
 
@@ -38,11 +39,197 @@
 <body>
 
     <div class="scroll"></div>
+    <!-- // scroll -->
+
+    <div class="progress" id ="progress">
+        <iframe id="loading" src="assets/ani/flower2.html" frameborder="0">
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>flower - loading 2</title>
+
+                <style>
+                    *{margin: 0; padding: 0; box-sizing: border-box;}
+                    
+                    body {
+                        background: #000;
+                        display: flex;
+                        align-items: center;
+                        height: 100vh;
+                        justify-content: center;
+                    }
+
+                    .watch-face {
+                        height: 125px;
+                        width: 125px;
+                        animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+                    }
+
+                    .circle {
+                        height: 125px;
+                        width: 125px;
+                        border-radius: 50%;
+                        position: absolute;
+                        mix-blend-mode: screen;
+                        transform: translate(0, 0);
+                        animation: center 6s infinite;
+                    }
+
+                    .circle:nth-child(odd) {
+                        background: #b9b9b9a3;
+                    }
+
+                    .circle:nth-child(even) {
+                        background: #5f5f5f;
+                    }
+
+                    /* .circle:nth-child(odd) {
+                        background: #61bea2;
+                    }
+
+                    .circle:nth-child(even) {
+                        background: #529ca0;
+                    } */
+
+                    /* .circle:nth-child(1) {
+                        background: rgb(89 162 228 / 90%);
+                    }
+
+                    .circle:nth-child(2) {
+                        background: rgb(93 89 228 / 90%);
+                    }
+
+                    .circle:nth-child(3) {
+                        background: rgb(224 67 196 / 64%);
+                    }
+
+                    .circle:nth-child(4) {
+                        background: rgb(187 67 224 / 71%);
+                    }
+
+                    .circle:nth-child(5) {
+                        background: rgb(145 230 200 / 71%);
+                    }
+
+                    .circle:nth-child(6) {
+                        background: rgb(43 179 155 / 71%);
+                    } */
+
+                    .circle:nth-child(1) {
+                        animation: circle-1 4s ease alternate infinite;
+                    }
+
+                    .circle:nth-child(2) {
+                        animation: circle-2 4s ease alternate infinite;
+                    }
+
+                    .circle:nth-child(3) {
+                        animation: circle-3 4s ease alternate infinite;
+                    }
+
+                    .circle:nth-child(4) {
+                        animation: circle-4 4s ease alternate infinite;
+                    }
+
+                    .circle:nth-child(5) {
+                        animation: circle-5 4s ease alternate infinite;
+                    }
+
+                    .circle:nth-child(6) {
+                    animation: circle-6 4s ease alternate infinite;
+                    }
+
+                    @keyframes pulse {
+                    0% {
+                        transform: scale(.15) rotate(180deg);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                    }
+
+                    @keyframes circle-1 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(-35px, -50px);
+                    }
+                    }
+
+                    @keyframes circle-2 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(35px, 50px);
+                    }
+                    }
+
+                    @keyframes circle-3 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(-60px, 0);
+                    }
+                    }
+
+                    @keyframes circle-4 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(60px, 0);
+                    }
+                    }
+
+                    @keyframes circle-5 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(-35px, 50px);
+                    }
+                    }
+
+                    @keyframes circle-6 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(35px, -50px);
+                    }
+                    }
+                </style>
+
+            </head>
+            <body>
+                <div class="watch-face">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </body>
+            </html>
+        </iframe>
+		<span class="progress-text">0</span> 
+    </div>
+    <!-- // progress -->
 
     <header id="header">
+        <div class="hd_bg">
+            <strong class="splice">PORTFOLIO</strong>
+            <em class="splice">LEEBYUNGJU</em>
+        </div>
         <div class="hd">
             <h1><a href="#">A - PERSONAL - PROJECT</a></h1>
-            <span>2020</span>
+            <strong>2020</strong>
         </div>
     </header>
     <!-- // header -->
@@ -230,15 +417,16 @@
                                         </div>
                                     </div>
                                     <div class="right_box">
-                                        <figure>
-                                            <img src="assets/img/standard.jpg" alt="작업물">
-                                            <figcaption>
-                                                <span>work1</span>
-                                                <span>WEB</span>
-                                                <span>PUB</span>
-                                                <span>2020.11.14</span>
-                                            </figcaption>
-                                        </figure>
+                                        <div class="card">
+                                            <h4>WEBSTANDARD</h4>
+                                            <p>the first work</p>
+                                            <figure>
+                                                <img src="assets/img/standard.jpg" alt="작업물">
+                                            </figure>
+                                            <div class="cbtn">
+                                                <a href="http://s0369852.dothome.co.kr/webstandard/index.html" target="_blank"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -273,9 +461,16 @@
                                         </div>
                                     </div>
                                     <div class="right_box">
-                                        <figure>
-                                            <img src="assets/img/responsive.jpg" alt="작업물">
-                                        </figure>
+                                        <div class="card">
+                                            <h4>RESPONSIVE</h4>
+                                            <p>the second work</p>
+                                            <figure>
+                                                <img src="assets/img/responsive.jpg" alt="작업물">
+                                            </figure>
+                                            <div class="cbtn">
+                                                <a href="http://s0369852.dothome.co.kr/web_responsive/index.html" target="_blank"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -311,9 +506,16 @@
                                         </div>
                                     </div>
                                     <div class="right_box">
-                                        <figure>
-                                            <img src="assets/img/megabox.jpg" alt="작업물">
-                                        </figure>
+                                        <div class="card">
+                                            <h4>MEGABOX</h4>
+                                            <p>the third work</p>
+                                            <figure>
+                                                <img src="assets/img/megabox.jpg" alt="작업물">
+                                            </figure>
+                                            <div class="cbtn">
+                                                <a href="http://s0369852.dothome.co.kr/megabox/index21.html" target="_blank"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -346,9 +548,16 @@
                                         </div>
                                     </div>
                                     <div class="right_box">
-                                        <figure>
-                                            <img src="assets/img/kream.jpg" alt="작업물">
-                                        </figure>
+                                        <div class="card">
+                                            <h4>KREAM</h4>
+                                            <p>the forth work</p>
+                                            <figure>
+                                                <img src="assets/img/kream.jpg" alt="작업물">
+                                            </figure>
+                                            <div class="cbtn">
+                                                <a href="http://s0369852.dothome.co.kr/pfo/KREAM.html" target="_blank"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
