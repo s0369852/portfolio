@@ -3,397 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flower - loading 1</title>
+    <title>flower - loading</title>
 
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box;}
-
+        
         body {
-            background-color:black;
+            background: #000;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
         }
-            .container {
-            height: 100px;
-            width: 100px;
+
+        .watch-face {
+            height: 125px;
+            width: 125px;
+            animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+        }
+
+        .circle {
+            height: 125px;
+            width: 125px;
+            border-radius: 50%;
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
+            mix-blend-mode: screen;
+            transform: translate(0, 0);
+            animation: center 6s infinite;
         }
 
-        .droplet {
-            border-radius: 5px 80%;
-            border-style: solid;
-            border-width: 5px;
-            border-color: black;
-            height: 100px;
-            margin: auto;
-            width: 100px;
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            /* top: 50%;
-                right: 50%;*/
-            transform-origin: left top;
-            opacity: 0;
+        /* .circle:nth-child(odd) {
+            background: #b9b9b9a3;
         }
 
-        #no1 {
-            background: rgba(159, 168, 218, 0.5);
-            animation: spin 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0s;
+        .circle:nth-child(even) {
+            background: #5f5f5f;
+        } */
+
+        /* .circle:nth-child(odd) {
+            background: #61bea2;
         }
 
-        #no2 {
-            background: rgba(121, 134, 203, 0.5);
-            animation: spin2 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.05s;
+        .circle:nth-child(even) {
+            background: #529ca0;
+        } */
+
+        .circle:nth-child(1) {
+            background: rgb(55 158 222 / 65%);
         }
 
-        #no3 {
-            background: rgba(92, 107, 192, 0.5);
-            animation: spin3 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.1s;
+        .circle:nth-child(2) {
+            background: rgb(78 74 216);
         }
 
-        #no4 {
-            background: rgba(159, 168, 218, 0.5);
-            animation: spin4 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.15s;
+        .circle:nth-child(3) {
+            background: rgb(189 52 164 / 52%);
         }
 
-        #no5 {
-            background: rgba(121, 134, 203, 0.5);
-            animation: spin5 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.2s;
+        .circle:nth-child(4) {
+            background: rgb(227 32 228 / 64%);
         }
 
-        #no6 {
-            background: rgba(92, 107, 192, 0.5);
-            animation: spin6 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.25s;
+        .circle:nth-child(5) {
+            background: rgb(120 214 159 / 65%);
         }
 
-        #no7 {
-            background: rgba(159, 168, 218, 0.5);
-            animation: spin7 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.30s;
+        .circle:nth-child(6) {
+            background: rgb(28 152 130 / 79%);
         }
 
-        #no8 {
-            background: rgba(121, 134, 203, 0.5);
-            animation: spin8 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.35s;
+        .circle:nth-child(1) {
+            animation: circle-1 4s ease alternate infinite;
         }
 
-        #no9 {
-            background: rgba(121, 134, 203, 0.5);
-            animation: spin9 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.40s;
+        .circle:nth-child(2) {
+            animation: circle-2 4s ease alternate infinite;
         }
 
-        #no10 {
-            background: rgba(92, 107, 192, 0.5);
-            animation: spin10 5s ease-out infinite;
-            animation-fill-mode: forwards;
-            animation-delay: 0.45s;
+        .circle:nth-child(3) {
+            animation: circle-3 4s ease alternate infinite;
         }
 
-        @keyframes spin {
+        .circle:nth-child(4) {
+            animation: circle-4 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(5) {
+            animation: circle-5 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(6) {
+        animation: circle-6 4s ease alternate infinite;
+        }
+
+        @keyframes pulse {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(324deg) scale(1);
-            transform: rotate(324deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(324deg) scale(1);
-            transform: rotate(324deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: scale(.15) rotate(180deg);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: scale(1);
         }
         }
 
-        @keyframes spin2 {
+        @keyframes circle-1 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(288deg) scale(1);
-            transform: rotate(288deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(288deg) scale(1);
-            transform: rotate(288deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(-35px, -50px);
         }
         }
 
-        @keyframes spin3 {
+        @keyframes circle-2 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(252deg) scale(1);
-            transform: rotate(252deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(252deg) scale(1);
-            transform: rotate(252deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(35px, 50px);
         }
         }
 
-        @keyframes spin4 {
+        @keyframes circle-3 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(2160deg) scale(1);
-            transform: rotate(216deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(216deg) scale(1);
-            transform: rotate(216deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(-60px, 0);
         }
         }
 
-        @keyframes spin5 {
+        @keyframes circle-4 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(180deg) scale(1);
-            transform: rotate(180deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(180deg) scale(1);
-            transform: rotate(180deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(60px, 0);
         }
         }
 
-        @keyframes spin6 {
+        @keyframes circle-5 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(144deg) scale(1);
-            transform: rotate(144deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(144deg) scale(1);
-            transform: rotate(144deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(-35px, 50px);
         }
         }
 
-        @keyframes spin7 {
+        @keyframes circle-6 {
         0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(108deg) scale(1);
-            transform: rotate(108deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(108deg) scale(1);
-            transform: rotate(108deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(0, 0);
         }
         100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
+            transform: translate(35px, -50px);
         }
         }
-
-        @keyframes spin8 {
-        0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(72deg) scale(1);
-            transform: rotate(72deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(72deg) scale(1);
-            transform: rotate(72deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        }
-
-        @keyframes spin9 {
-        0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(36deg) scale(1);
-            transform: rotate(36deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(36deg) scale(1);
-            transform: rotate(36deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        }
-
-        @keyframes spin10 {
-        0% {
-            opacity: 0;
-            -webkit-transform: rotate(0deg) scale(0.01);
-            transform: rotate(0deg) scale(0.01);
-        }
-        20% {
-            opacity: 100;
-            -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
-        }
-        60% {
-            opacity: 100;
-            -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
-        }
-        80% {
-            opacity: 0;
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        100% {
-            -webkit-transform: rotate(720deg) scale(0.01);
-            transform: rotate(720deg) scale(0.01);
-        }
-        }
-
     </style>
 
 </head>
 <body>
-    <div class="container">
-        <div class="droplet" id="no1"></div>
-        <div class="droplet" id="no2"></div>
-        <div class="droplet" id="no3"></div>
-        <div class="droplet" id="no4"></div>
-        <div class="droplet" id="no5"></div>
-        <div class="droplet" id="no6"></div>
-        <div class="droplet" id="no7"></div>
-        <div class="droplet" id="no8"></div>
-        <div class="droplet" id="no9"></div>
-        <div class="droplet" id="no10"></div>
+    <div class="watch-face">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
 </body>
 </html>

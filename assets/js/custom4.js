@@ -27,10 +27,10 @@
                 tl.fromTo("#header .hd_bg span", {opacity:0, y: 100}, {opacity:1, y: 0, duration: 0.4, delay: 2, stagger: 0.1, ease: "power2.inOut"});
                 tl.to("#header .hd_bg strong span", {fontSize: "10vw", delay: 0.5, y: 0, ease: "power2.inOut"});
                 tl.to("#header .hd_bg em span", {fontSize: "4vw", delay: 0.5, y: 0,  ease: "power2.inOut"});
-                tl.to("#header .hd_bg em", {left: "-20vw", delay: 0.5, ease: "power2.inOut"});
-                tl.to("#header .hd_bg strong", {left: "25vw", delay: 0.5, ease: "power2.inOut"});
+                tl.to("#header .hd_bg em", {left: "-20%", delay: 0.5, ease: "power2.inOut"});
+                tl.to("#header .hd_bg strong", {left: "33%", delay: 0.5, ease: "power2.inOut"});
                 tl.to("#header .hd_bg", {opacity: 0, delay: 0.5, ease: "power2.inOut"});
-                tl.to('.hd', {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.3});
+                tl.to('.hd', {duration: 0.5 , opacity: 1, stagger: 0.2, y: 1, delay: 0.2});
             }
             if(current > 99.9){
                 current = 100;
@@ -91,7 +91,7 @@ navBtn.click(function(e){
 // scroll
 $(window).scroll(function(){
     let wScroll = $(window).scrollTop();
-    const scrollTop = $(window).scrollTop()+ wHeight / 3;
+    const scrollTop = $(window).scrollTop()+ wHeight / 2;
 
     $('.scroll').text(parseInt(wScroll));
 
@@ -127,24 +127,32 @@ $(window).scroll(function(){
 
     //section1. main
     if( scrollTop >= $('#header').offset().top ){
-        $("#section1").addClass("show");
-        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 1.5, y: 1, delay: 0.7});
-        gsap.to('.main strong:nth-child(1) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0});
-        gsap.to('.main strong:nth-child(2) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
-        gsap.to('.main strong:nth-child(3) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.5});
-        gsap.to('.main strong:nth-child(4) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.7});
-        gsap.to('.main strong:nth-child(5) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.9});
-        gsap.to('.main strong:nth-child(6) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1});
-        gsap.to('.main strong:nth-child(7) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.1});
-        gsap.to('.main strong:nth-child(8) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.3});
-        gsap.to('.main strong:nth-child(9) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.5});
-        gsap.to('.main strong:nth-child(10) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.7});
-        gsap.to('.main strong:nth-child(11) span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 1.9});
+        $('#section1').addClass('show');
+        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 1, y: 1, delay: 0.7});
+        gsap.to('.main strong:nth-child(1) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0});
+        gsap.to('.main strong:nth-child(2) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.1, y: 0, delay: 0.2});
+        gsap.to('.main strong:nth-child(4) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
+        
+    }
+    if( wScroll > $('.main strong:nth-child(1) span').offset().top ){
+        gsap.to('.main strong:nth-child(5) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(6) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+    }
+
+    if( wScroll > $('.main strong:nth-child(3) span').offset().top ){
+        gsap.to('.main strong:nth-child(7) span', {duration: 0.5, opacity: 1, stagger: 0.3, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(8) span', {duration: 0.5, opacity: 1, stagger: 0.3, y: 0, delay: 0.2});
+    }
+    if( wScroll > $('.main strong:nth-child(4) span').offset().top ){
+        gsap.to('.main strong:nth-child(9) span', {duration: 0.5, opacity: 1, stagger: 0.4, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(10) span', {duration: 0.5, opacity: 1, stagger: 0.4, y: 0, delay: 0.2});
+        gsap.to('.main strong:nth-child(11) span', {duration: 0.5, opacity: 1, stagger: 0.4, y: 0, delay: 0.3});
     }
 
     // section2 .about
     if( scrollTop > $('#section2').offset().top ){
-        gsap.to('.about_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        gsap.to('.about_title h2 span', {duration: 1, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         navBtn.removeClass('on');
         navBtn.eq(1).addClass('on');
     }
@@ -158,7 +166,7 @@ $(window).scroll(function(){
         });
         if( scrollTop > $('#section3').offset().top){
             gsap.to('.slide1 .cont_title .main_txt span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-            gsap.to('.slide1 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            gsap.to('.slide1 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.3});
             $('.slide1 .left .text_wrap').addClass('show');
             $('.slide1 .content_txt').addClass('show');
             $('.slide1 .top_link').addClass('show');
@@ -175,7 +183,7 @@ $(window).scroll(function(){
         });
         if( scrollTop > $('#section4').offset().top){
             gsap.to('.slide2 .cont_title .main_txt span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-            gsap.to('.slide2 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            gsap.to('.slide2 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.3});
             $('.slide2 .left .text_wrap').addClass('show');
             $('.slide2 .content_txt').addClass('show');
             $('.slide2 .top_link').addClass('show');
@@ -192,7 +200,7 @@ $(window).scroll(function(){
         });
         if( scrollTop > $('#section5').offset().top){
             gsap.to('.slide3 .cont_title .main_txt span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-            gsap.to('.slide3 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
+            gsap.to('.slide3 .cont_title .sub_txt span', {duration: .5, opacity: 1, stagger: 0.1, x: 0, delay: 0.3});
             $('.slide3 .left .text_wrap').addClass('show');
             $('.slide3 .content_txt').addClass('show');
             $('.slide3 .top_link').addClass('show');
@@ -205,61 +213,22 @@ $(window).scroll(function(){
         navBtn.removeClass('on');
         navBtn.eq(2).addClass('on');
         gsap.to('.work_title h2 span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-        if( scrollTop > $('.w_box1').offset().top){
-            gsap.to('.w_box1 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box1 .title_box').addClass('show');
-            $('.w_box1 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box1 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box1 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box1 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box2').offset().top){
-            gsap.to('.w_box2 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box2 .title_box').addClass('show');
-            $('.w_box2 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box2 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box2 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box2 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box3').offset().top){
-            gsap.to('.w_box3 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box3 .title_box').addClass('show');
-            $('.w_box3 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box3 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box3 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box3 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box4').offset().top){
-            gsap.to('.w_box4 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box4 .title_box').addClass('show');
-            $('.w_box4 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box4 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box4 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box4 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box5').offset().top){
-            gsap.to('.w_box5 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box5 .title_box').addClass('show');
-            $('.w_box5 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box5 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box5 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box5 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box6').offset().top){
-            gsap.to('.w_box6 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box6 .title_box').addClass('show');
-            $('.w_box6 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box6 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box6 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box6 .t_box .right_box').addClass('show');
-        }
-        if( scrollTop > $('.w_box7').offset().top){
-            gsap.to('.w_box7 .title_box h3 span', {duration: 0.7, opacity: 1, stagger: 0.1, x: 0, delay: 0.4});
-            $('.w_box7 .title_box').addClass('show');
-            $('.w_box7 .t_box .left_box .subtitle h4').addClass('show');
-            $('.w_box7 .t_box .left_box .w_txt').addClass('show');
-            $('.w_box7 .t_box .left_box .sBtn').addClass('show');
-            $('.w_box7 .t_box .right_box').addClass('show');
+        for(let i = 1; i <= $('.w_box').length; i++){
+            if( scrollTop > $('.w_box'+i).offset().top){
+                gsap.to('.w_box'+i+' .title_box h3 span', {duration: 0.5, opacity: 1, stagger: 0.1, x: 0, delay: 0.3});
+                $('.w_box'+i+' .title_box').addClass('show');
+                $('.w_box'+i+' .t_box .left_box .subtitle h4').addClass('show');
+                $('.w_box'+i+' .t_box .left_box .w_txt').addClass('show');
+                $('.w_box'+i+' .t_box .left_box .sBtn').addClass('show');
+                $('.w_box'+i+' .t_box .right_box').addClass('show');
+            } else {
+                gsap.to('.w_box'+i+' .title_box h3 span', {opacity: 0, stagger: 0.1, x: 0});
+                $('.w_box'+i+' .title_box').removeClass('show');
+                $('.w_box'+i+' .t_box .left_box .subtitle h4').removeClass('show');
+                $('.w_box'+i+' .t_box .left_box .w_txt').removeClass('show');
+                $('.w_box'+i+' .t_box .left_box .sBtn').removeClass('show');
+                $('.w_box'+i+' .t_box .right_box').removeClass('show');
+            }
         }
     }
 
