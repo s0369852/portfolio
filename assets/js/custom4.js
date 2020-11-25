@@ -136,31 +136,32 @@ $(window).scroll(function(){
     //section1. main
     if( scrollTop >= $('#header').offset().top ){
         $('#section1').addClass('show');
-        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 1, y: 1, delay: 0.7});
-        gsap.to('.main strong:nth-child(1) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0});
-        gsap.to('.main strong:nth-child(2) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.1, y: 0, delay: 0.2});
-        gsap.to('.main strong:nth-child(4) span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.3});
+        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.4});
+        gsap.to('.main strong:nth-child(1) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0});
+        gsap.to('.main strong:nth-child(2) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+        gsap.to('.main strong:nth-child(4) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
         
     }
-    if( wScroll > $('.main strong:nth-child(1) span').offset().top ){
+    if( wScroll > $('.main strong:nth-child(2) span').offset().top ){
         gsap.to('.main strong:nth-child(5) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
         gsap.to('.main strong:nth-child(6) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
     }
-
     if( wScroll > $('.main strong:nth-child(3) span').offset().top ){
         gsap.to('.main strong:nth-child(7) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
         gsap.to('.main strong:nth-child(8) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
     }
-    if( wScroll > $('.main strong:nth-child(4) span').offset().top ){
+    if( wScroll > $('.main strong:nth-child(5) span').offset().top ){
         gsap.to('.main strong:nth-child(9) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
         gsap.to('.main strong:nth-child(10) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
-        gsap.to('.main strong:nth-child(11) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
+    }
+    if( wScroll > $('.main strong:nth-child(6) span').offset().top ){
+        gsap.to('.main strong:nth-child(11) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
     }
 
     // section2 .about
     if( scrollTop > $('#section2').offset().top ){
-        gsap.to('.about_title h2 span', {duration: 1, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        gsap.to('.about_title h2 span', {duration: 1, opacity: 1, stagger: 0.1, y: 0, delay: 0.2});
         navBtn.removeClass('on');
         navBtn.eq(1).addClass('on');
     } else {
