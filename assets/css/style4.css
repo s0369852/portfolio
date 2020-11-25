@@ -1767,13 +1767,13 @@ body {
     .txt_box .a_txt {font-size: var(--font-micro);}
     /* // section2 .about */
     
-    .w_box .box::before {top: -12vh; font-size: 8vh;}
-    .w_box .box::after {top: -4vh; left: 10vh;}
+    .w_box .box::before {top: -10vh; font-size: 6vh;}
+    .w_box .box::after {top: -4vh; left: 8vh; width: 100px;}
 
     .w_box:nth-child(even) .box .left {margin-left: auto; text-align: right;}
 
     .w_box .box .left .title h3 {padding-bottom: 1vh; font-size: var(--font-medium);}
-    .w_box .box .left .title p {padding-right: 0; font-size: var(--font-micro);}
+    .w_box .box .left .title p {padding-right: 0; font-size: var(--font-micro); font-weight: var(--weight-thin);}
 
     .w_box .box .left .txt {margin-top: 2vh;}
     .w_box .box .left .txt li {font-size: var(--font-micro);}
@@ -1814,10 +1814,11 @@ body {
 
     #section6 .container {padding: 0;}
 
+    .w_box .box .left .btn {display: none;}
+
     .w_box .box .right .card .img, 
     .ani_box .box .right {height: calc(var(--img-height) / var(--ratio-two));}
     .w_box .box .right .card:hover .btn a { transform:scale(16); -webkit-transform:scale(16); -moz-transform:scale(16); -ms-transform:scale(16); -o-transform:scale(16);}
-
     /* // section6 .work */
 
     .possi_title h2 em:nth-child(2) {font-weight: var(--weight-light); -webkit-text-stroke: 0.6px var(--color-black);}
