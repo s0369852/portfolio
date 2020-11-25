@@ -1006,14 +1006,15 @@ body {
 .w_box .box .right .card .btn a {
     position: absolute;
     right: 14px;
-    bottom: 14px;
+    bottom: 11px;
     width: 30px;
     height: 30px;
     border: none;
-    border-radius: 30px;
+    border-radius: 38%;
     cursor: pointer;
     outline: none;
     mix-blend-mode: hard-light;
+    transform: rotate(45deg);
     transition: all 0.3s ease;
 }
 
