@@ -707,15 +707,11 @@ body {
 }
 
 .slide1 .left .text_wrap {background: #e2e2c9;}
-
 .slide2 .left .text_wrap {background: #b5d5e4;}
-
 .slide3 .left .text_wrap {background: #d8bad3;}
 
 .slide1 .scroll_line {background: #e2e2c9;}
-
 .slide2 .scroll_line {background: #b5d5e4;}
-
 .slide3 .scroll_line {background: #d8bad3;}
 
 .right {
@@ -833,7 +829,7 @@ body {
 }
 
 .work {padding: 20vh 0; color: var(--color-white);}
-.work_title {margin-bottom: 500px; text-align: center;}
+.work_title {margin-bottom: 50vh; text-align: center;}
 .work_title h2 {
     overflow: hidden; 
     font-family: 'Anton', sans-serif; 
