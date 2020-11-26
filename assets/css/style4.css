@@ -876,6 +876,7 @@ body {
 .w_box5 .box::before {content: "05";}
 .w_box6 .box::before {content: "06";}
 .w_box7 .box::before {content: "07";}
+.w_box8 .box::before {content: "08";}
 
 .w_box .box::after {
     content: '';
@@ -1015,7 +1016,7 @@ body {
     outline: none;
     mix-blend-mode: hard-light;
     transform: rotate(45deg);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .w_box1 .box .right .card .btn a {background-color: #84680c;}
@@ -1039,38 +1040,37 @@ body {
 .work_box > article .box::before {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.1s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04);
 }
 .work_box > article .box::after {
     opacity: 0;
     transform: translateX(-30px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.3s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.1s;
 }
-
 .work_box > article .left .title h3 {
     opacity: 0;
     transform: translateY(60px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.4s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.2s;
 }
 .work_box > article .left .title p {
     opacity: 0;
     transform: translateY(60px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.5s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.3s;
 }
 .work_box > article .left .txt .des {
     opacity: 0;
     transform: translateY(60px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.6s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.4s;
 }
 .work_box > article .left .txt .skill {
     opacity: 0;
     transform: translateY(60px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.7s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.5s;
 }
 .work_box > article .left .btn {
     opacity: 0;
     transform: translateX(-60px);
-    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.8s;
+    transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.6s;
 }
 
 .work_box > article .right { opacity: 0; transform: scale(0); transition: all 1s cubic-bezier(0, 0.87, 0.26, 1.04) 0.8s;}
