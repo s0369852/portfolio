@@ -138,7 +138,7 @@ $(window).scroll(function(){
     if( scrollTop > $('#section3').offset().top ){
         $(".nav_list li a").css("color", "#F0F0F0")
     }
-    if( scrollTop > $('#section7').offset().top ){
+    if( scrollTop > $('#section6').offset().top ){
         $(".nav_list li a").css("color", "#242321")
     } 
     if( scrollTop > $('#footer').offset().top ){
@@ -148,23 +148,21 @@ $(window).scroll(function(){
     //section1. main
     if( scrollTop >= $('#header').offset().top ){
         $('#section1').addClass('show');
-        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 0.5, y: 1, delay: 0.4});
-        gsap.to('.main strong:nth-child(1) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0});
-        gsap.to('.main strong:nth-child(2) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 0.1, y: 1, delay: 0.4});
+        gsap.to('.main strong:nth-child(1) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0});
+        gsap.to('.main strong:nth-child(2) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
         gsap.to('.main strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
-        gsap.to('.main strong:nth-child(4) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
+        gsap.to('.main strong:nth-child(4) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
         
     }
     if( wScroll > $('.main strong:nth-child(2) span').offset().top ){
-        gsap.to('.main strong:nth-child(5) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(6) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
-    }
-    if( wScroll > $('.main strong:nth-child(3) span').offset().top ){
-        gsap.to('.main strong:nth-child(7) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(8) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+        gsap.to('.main strong:nth-child(5) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(6) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+        gsap.to('.main strong:nth-child(7) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
     }
     if( wScroll > $('.main strong:nth-child(5) span').offset().top ){
-        gsap.to('.main strong:nth-child(9) span', {duration: 0.5, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(8) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.main strong:nth-child(9) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
     }
 
     // section2 .about
@@ -205,32 +203,41 @@ $(window).scroll(function(){
         gsap.to('.work h2 span', {duration: 0.5, opacity: 0, stagger: 0.1, y: 0});
     }
 
-    // section7 .possi
-    if ( scrollTop <= $('#section7').offset().top){
-        gsap.to('.possi_title strong span', {duration: .3, opacity: 0, stagger: 0.1, y: 0});
-        $('.possi_box .right_box .p_txt').removeClass('show');
-        $('.possi_box .right_box .skills').removeClass('show');
-        $('.possi_box .right_box .license').removeClass('show');
+    // section5 .js
+    if( scrollTop > $('#section5').offset().top){
+        $(".js_box").each(function(){
+            if( scrollTop > $(this).offset().top - wHeight / 2 ){
+                $(this).addClass("show")
+            } else {
+                $(this).removeClass("show")
+            }
+        });
+    }
+
+    // section6 .poss
+    if ( scrollTop > $('#section6').offset().top){
+        gsap.to('.poss strong span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        if(wScroll > $('#section6').offset().top - wHeight / 5){
+            $('.poss .has_ani').addClass('ani_in');
+            $('.poss .poss_box .right').addClass('show');
+            $('.poss .poss_mbox').addClass('show');
+        } else {
+            $('.poss .has_ani').removeClass('ani_in');
+            $('.poss .poss_box .right').removeClass('show');
+            $('.poss .poss_mbox').removeClass('show');
+        };
     } else {
-        gsap.to('.possi_title strong span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
-            if(wScroll > $('#section7').offset().top - wHeight / 5){
-                $('.possi .has_ani').each(function(index){
-                    $(this).delay($(this).data('delay')).queue(function(){
-                        $(this).addClass('ani_in');
-                    });
-                });
-                $('.possi_box .right_box .p_txt').addClass('show');
-                $('.possi_box .right_box .skills').addClass('show');
-                $('.possi_box .right_box .license').addClass('show');
-            };
+        gsap.to('.poss strong span', {duration: 0.3, opacity: 0, stagger: 0.1, y: 0});
     }
 
     // footer
     if( scrollTop > $('#footer').offset().top - wHeight / 3){
         navBtn.removeClass('on');
         navBtn.eq(3).addClass('on');
-        gsap.to('.footer_title h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
+        gsap.to('.footer h2 span', {duration: .5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
         $('.circle').addClass('rot')
+    } else {
+        gsap.to('.footer h2 span', {duration: .3, opacity: 0, stagger: 0.1, y: 0});
     }
 
 });
@@ -238,13 +245,13 @@ $(window).scroll(function(){
 
 // animation modal.
 
-let aniBtn1 = $('.w_box5').find('.btn');
+let aniBtn1 = $('.list_item').find('.btn');
 let aniBtn2 = $('.w_box6').find('.btn');
 
-let modal1 = $('.w_box5').find('.modal');
+let modal1 = $('.list_item').find('.modal');
 let modal2 = $('.w_box6').find('.modal');
 
-let close1 = $('.w_box5').find('.close');
+let close1 = $('.list_item').find('.close');
 let close2 = $('.w_box6').find('.close');
 
 aniBtn1.click(function(e){
@@ -270,10 +277,10 @@ close2.click(function(e){
 /*--------------------
 Vars
 --------------------*/
-const $menu = document.querySelector('.list');
+const $list = document.querySelector('.list_box');
 const $items = document.querySelectorAll('.list_item');
-const $images = document.querySelectorAll('.list_item iframe');
-let menuWidth = $menu.clientWidth;
+const $iframe = document.querySelectorAll('.list_item iframe');
+let listWidth = $list.clientWidth;
 let itemWidth = $items[0].clientWidth;
 let wrapWidth = $items.length * itemWidth;
 
@@ -325,7 +332,7 @@ let isDragging = false;
 const handleTouchStart = e => {
     touchStart = e.clientX || e.touches[0].clientX;
     isDragging = true;
-    $menu.classList.add('is-dragging');
+    $list.classList.add('is-dragging');
 };
 const handleTouchMove = e => {
     if (!isDragging) return;
@@ -335,32 +342,32 @@ const handleTouchMove = e => {
 };
 const handleTouchEnd = () => {
     isDragging = false;
-    $menu.classList.remove('is-dragging');
+    $list.classList.remove('is-dragging');
 };
 
 
 /*--------------------
     Listeners
     --------------------*/
-$menu.addEventListener('mousewheel', handleMouseWheel);
+$list.addEventListener('mousewheel', handleMouseWheel);
 
-$menu.addEventListener('touchstart', handleTouchStart);
-$menu.addEventListener('touchmove', handleTouchMove);
-$menu.addEventListener('touchend', handleTouchEnd);
+$list.addEventListener('touchstart', handleTouchStart);
+$list.addEventListener('touchmove', handleTouchMove);
+$list.addEventListener('touchend', handleTouchEnd);
 
-$menu.addEventListener('mousedown', handleTouchStart);
-$menu.addEventListener('mousemove', handleTouchMove);
-$menu.addEventListener('mouseleave', handleTouchEnd);
-$menu.addEventListener('mouseup', handleTouchEnd);
+$list.addEventListener('mousedown', handleTouchStart);
+$list.addEventListener('mousemove', handleTouchMove);
+$list.addEventListener('mouseleave', handleTouchEnd);
+$list.addEventListener('mouseup', handleTouchEnd);
 
-$menu.addEventListener('selectstart', () => {return false;});
+$list.addEventListener('selectstart', () => {return false;});
 
 
 /*--------------------
     Resize
     --------------------*/
 window.addEventListener('resize', () => {
-    menuWidth = $menu.clientWidth;
+    listWidth = $list.clientWidth;
     itemWidth = $items[0].clientWidth;
     wrapWidth = $items.length * itemWidth;
 });
