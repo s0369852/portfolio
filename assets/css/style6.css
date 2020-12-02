@@ -595,7 +595,7 @@ body {
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 /* section3 .work */
-#section3 .container {padding: 0 12vw;}
+#section3 .container {padding: 0 10vw;}
 
 .work {padding: 20vh 0; color: var(--color-white);}
 .work .title {margin-bottom: 50vh; text-align: center;}
@@ -1212,8 +1212,8 @@ body {
 
     .work .work_box .w_box:nth-child(even) .box .left {margin-left: auto; text-align: right;}
 
-    .work .work_box .w_box .box .left .title h3 {padding-bottom: 1vh; font-size: var(--font-medium);}
-    .work .work_box .w_box .box .left .title p {padding-right: 0; font-size: var(--font-micro); font-weight: var(--weight-thin);}
+    .work .work_box .w_box .box .left .stitle h3 {padding-bottom: 1vh; font-size: var(--font-medium);}
+    .work .work_box .w_box .box .left .stitle p {padding-right: 0; font-size: var(--font-micro); font-weight: var(--weight-thin);}
 
     .work .work_box .w_box .box .left .txt {margin-top: 2vh;}
     .work .work_box .w_box .box .left .txt li {font-size: var(--font-micro);}
