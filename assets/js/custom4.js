@@ -1,3 +1,91 @@
+// grain
+const grain = () => {
+    let canvas,
+        ctx; // ctx = "context"라는 단어의 속기
+
+    let wWidth,
+        wHeight;
+
+    let grainData = [];
+    let frame = 0;
+
+    let loopTimeout;
+
+    // Create Grain
+    const createGrain = () => {
+        const idata = ctx.createImageData(wWidth, wHeight);
+        const buffer32 = new Uint32Array(idata.data.buffer);
+        const len = buffer32.length; // len = length
+
+        for (let i = 0; i < len; i++) {
+            if (Math.random() < 0.5) {
+                buffer32[i] = 0xff000000;
+            }
+        }
+
+        grainData.push(idata);
+    };
+
+    // Play Grain
+    const paintGrain = () => {
+        if (frame === 9) {
+            frame = 0;
+        } else {
+            frame++;
+        }
+
+        ctx.putImageData(grainData[frame], 0, 0);
+    };
+
+    // Loop
+    const loop = () => {
+        paintGrain(frame);
+
+        loopTimeout = window.setTimeout(() => {
+            window.requestAnimationFrame(loop);
+        }, (1000 / 25));
+    };
+
+    // Setup
+    const setup = () => {
+        wWidth = window.innerWidth;
+        wHeight = window.innerHeight;
+
+        canvas.width = wWidth;
+        canvas.height = wHeight;
+
+        for (let i = 0; i < 10; i++) {
+            createGrain();
+        }
+
+        loop();
+    };
+
+    // reset
+    let resizeThrottle;
+    const reset = () => {
+        window.addEventListener('resize', () => {
+            window.clearTimeout(resizeThrottle);
+
+            resizeThrottle = window.setTimeout(() => {
+                window.clearTimeout(loopTimeout);
+                setup();
+            }, 1000);
+        }, false);
+    };
+
+    // Init
+    const init = (() => {
+        canvas = document.getElementById('grain');
+        ctx = canvas.getContext('2d');
+
+        setup();
+    })();
+};
+
+grain();
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
 
 // progress
     function imagesProgress(){
@@ -41,6 +129,8 @@
 
     imagesProgress();
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+
 // header
 let wHeight = $(window).height();       // 보이는 화면의 높이값 (브라우저의 height)
 let dHeight = $(document).height();     // 문서 전체의 높이값 (문서(document)의 높이값)
@@ -68,6 +158,8 @@ function hasScroll(){
     }
 };
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+
 // 공통
 $('.splice').each(function(){
     let txt = $(this).text();
@@ -75,6 +167,8 @@ $('.splice').each(function(){
         split = '<span aria-hidden="true">' + split + '</span>';
     $(this).html(split).attr('aria-label', txt);
 });
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
 
 // 버튼
 let navBtn = $('.nav_list li'),
@@ -104,6 +198,7 @@ nextBtn.click(function(e){
     $('html, body').animate({'scrollTop': scrollPosition}, 600, 'easeInSine');
 });
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------
 
 // scroll
 $(window).scroll(function(){
@@ -242,16 +337,17 @@ $(window).scroll(function(){
 
 });
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// animation modal.
+// animation modal
 
-let aniBtn1 = $('.list_item').find('.btn');
+let aniBtn1 = $('.list_wrapper').find('.btn');
 let aniBtn2 = $('.w_box6').find('.btn');
 
-let modal1 = $('.list_item').find('.modal');
+let modal1 = $('.list_wrapper').find('.modal');
 let modal2 = $('.w_box6').find('.modal');
 
-let close1 = $('.list_item').find('.close');
+let close1 = $('.list_wrapper').find('.close');
 let close2 = $('.w_box6').find('.close');
 
 aniBtn1.click(function(e){
@@ -274,120 +370,108 @@ close2.click(function(e){
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-/*--------------------
-Vars
---------------------*/
-const $list = document.querySelector('.list_box');
-const $items = document.querySelectorAll('.list_item');
-const $iframe = document.querySelectorAll('.list_item iframe');
-let listWidth = $list.clientWidth;
-let itemWidth = $items[0].clientWidth;
-let wrapWidth = $items.length * itemWidth;
+// animation
 
-let scrollSpeed = 0;
-let oldScrollY = 0;
-let scrollY = 0;
-let y = 0;
+// Vars
+    const $list = document.querySelector('.list_box');
+    const $items = document.querySelectorAll('.list_item');
+    const $iframe = document.querySelectorAll('.list_item iframe');
+    let listWidth = $list.clientWidth;
+    let itemWidth = $items[0].clientWidth * 1.2;
+    let wrapWidth = $items.length * itemWidth;
 
-
-/*--------------------
-    Lerp
-    --------------------*/
-const lerp = (v0, v1, t) => {
-    return v0 * (1 - t) + v1 * t;
-};
+    let scrollSpeed = 0;
+    let oldScrollY = 0;
+    let scrollY = 0;
+    let y = 0;
 
 
-/*--------------------
-    Dispose
-    --------------------*/
-const dispose = scroll => {
-    gsap.set($items, {
-    x: i => {
-        return i * itemWidth + scroll;
-    },
-    modifiers: {
-        x: (x, target) => {
-        const s = gsap.utils.wrap(-itemWidth, wrapWidth - itemWidth, parseInt(x));
-        return `${s}px`;
-        } } });
-};
-dispose(0);
+// Lerp
+    const lerp = (v0, v1, t) => {
+        return v0 * (1 - t) + v1 * t;
+    };
 
 
-/*--------------------
-    Wheel
-    --------------------*/
-const handleMouseWheel = e => {
-    scrollY -= e.deltaY * 0.9;
-};
+// Dispose
+    const dispose = scroll => {
+        gsap.set($items, {
+        x: i => {
+            return i * itemWidth + scroll;
+        },
+        modifiers: {
+            x: (x, target) => {
+            const s = gsap.utils.wrap(-itemWidth, wrapWidth - itemWidth, parseInt(x));
+            return `${s}px`;
+            } } });
+    };
+
+    dispose(0);
 
 
-/*--------------------
-    Touch
-    --------------------*/
-let touchStart = 0;
-let touchX = 0;
-let isDragging = false;
-const handleTouchStart = e => {
-    touchStart = e.clientX || e.touches[0].clientX;
-    isDragging = true;
-    $list.classList.add('is-dragging');
-};
-const handleTouchMove = e => {
-    if (!isDragging) return;
-    touchX = e.clientX || e.touches[0].clientX;
-    scrollY += (touchX - touchStart) * 2.5;
-    touchStart = touchX;
-};
-const handleTouchEnd = () => {
-    isDragging = false;
-    $list.classList.remove('is-dragging');
-};
+// Wheel
+    const handleMouseWheel = e => {
+        scrollY -= e.deltaY * 0.9;
+    };
 
 
-/*--------------------
-    Listeners
-    --------------------*/
-$list.addEventListener('mousewheel', handleMouseWheel);
+// Touch
+    let touchStart = 0;
+    let touchX = 0;
+    let isDragging = false;
+    const handleTouchStart = e => {
+        touchStart = e.clientX || e.touches[0].clientX;
+        isDragging = true;
+        $list.classList.add('is-dragging');
+    };
+    const handleTouchMove = e => {
+        if (!isDragging) return;
+        touchX = e.clientX || e.touches[0].clientX;
+        scrollY += (touchX - touchStart) * 2.5;
+        touchStart = touchX;
+    };
+    const handleTouchEnd = () => {
+        isDragging = false;
+        $list.classList.remove('is-dragging');
+    };
 
-$list.addEventListener('touchstart', handleTouchStart);
-$list.addEventListener('touchmove', handleTouchMove);
-$list.addEventListener('touchend', handleTouchEnd);
+// Listeners
+    $list.addEventListener('mousewheel', handleMouseWheel);
 
-$list.addEventListener('mousedown', handleTouchStart);
-$list.addEventListener('mousemove', handleTouchMove);
-$list.addEventListener('mouseleave', handleTouchEnd);
-$list.addEventListener('mouseup', handleTouchEnd);
+    $list.addEventListener('touchstart', handleTouchStart);
+    $list.addEventListener('touchmove', handleTouchMove);
+    $list.addEventListener('touchend', handleTouchEnd);
 
-$list.addEventListener('selectstart', () => {return false;});
+    $list.addEventListener('mousedown', handleTouchStart);
+    $list.addEventListener('mousemove', handleTouchMove);
+    $list.addEventListener('mouseleave', handleTouchEnd);
+    $list.addEventListener('mouseup', handleTouchEnd);
 
-
-/*--------------------
-    Resize
-    --------------------*/
-window.addEventListener('resize', () => {
-    listWidth = $list.clientWidth;
-    itemWidth = $items[0].clientWidth;
-    wrapWidth = $items.length * itemWidth;
-});
+    $list.addEventListener('selectstart', () => {return false;});
 
 
-/*--------------------
-    Render
-    --------------------*/
-const render = () => {
-    requestAnimationFrame(render);
-    y = lerp(y, scrollY, .1);
-    dispose(y);
+// Resize
+    window.addEventListener('resize', () => {
+        listWidth = $list.clientWidth;
+        itemWidth = $items[0].clientWidth * 1.2;
+        wrapWidth = $items.length * itemWidth;
+    });
 
-    scrollSpeed = y - oldScrollY;
-    oldScrollY = y;
+    
 
-    gsap.to($items, {
-    skewX: -scrollSpeed * .2,
-    rotate: scrollSpeed * .01,
-    scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.003 });
 
-};
-render();
+// Render
+    const render = () => {
+        requestAnimationFrame(render);
+        y = lerp(y, scrollY, .1);
+        dispose(y);
+
+        scrollSpeed = y - oldScrollY;
+        oldScrollY = y;
+
+        gsap.to($items, {
+        skewX: -scrollSpeed * .2,
+        rotate: scrollSpeed * .01,
+        scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.003 });
+    };
+
+    render();

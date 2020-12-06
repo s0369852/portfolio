@@ -58,6 +58,19 @@ body {
     color: var(--color-back);
     background: var(--color-white);
 }
+
+.grain {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.06;
+    z-index: 1;
+}
+
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 /* scroll box */
@@ -841,18 +854,19 @@ body {
 
 #section4 .container {width: 100%;}
 
-.s1 {
+.list .s1 {
     position: relative;
     height: 30vh;
     margin-bottom: 20vh;
 }
 
-.s1 svg {
+.list .s1 svg {
     font-family: 'Anton', sans-serif;
     position: absolute; 
     width: 100%;
 }
-.s1 svg text {
+
+.list .s1 svg text {
     text-transform: uppercase;
     animation: stroke 8s infinite alternate-reverse;
     stroke: #F0F0F0;
@@ -880,10 +894,12 @@ body {
     z-index: 1;
     height: var(--img-height);
 }
-.list.is-dragging {
+
+.list_box.is-dragging {
     cursor: -webkit-grabbing;
     cursor: grabbing;
 }
+
 .list_wrapper {
     counter-reset: count;
     display: -webkit-box;
@@ -895,6 +911,7 @@ body {
     left: 0;
     width: 100%;
 }
+
 .list_item {
     counter-increment: count;
     display: inline-block;
@@ -902,17 +919,10 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    width: 30vw;
+    width: 43vw;
     height: 100%;
-    padding: 0 1.5vw;
-    overflow: hidden;
 }
-@media (max-width: 767px) {
-.list_item {
-    width: 40vw;
-    height: 40vw;
-    }
-}
+
 .list_item:nth-child(n+10):before {
     content: counter(count);
 }
@@ -939,20 +949,11 @@ body {
             transform-origin: center;
 }
 
-/* .list_item h3 {
-    display: inline-block;
-    content: "0" counter(count);
-    color: #ffffff;
-    font-family: 'Anton', sans-serif;
-    font-size: 4vw;
-    -webkit-text-stroke: 1.4px var(--color-white); color: var(--color-transparent);
-} */
-
 .list_item .cot h3 {
     position: absolute;
     z-index: 2;
-    top: 1vh;
-    right: 2vh;
+    top: 2vh;
+    right: 4vh;
     display: inline-block;
     content: "0" counter(count);
     color: #ffffff;
@@ -969,7 +970,7 @@ body {
     content: "0" counter(count);
     color: #ffffff;
     font-family: 'Anton', sans-serif;
-    font-size: 3vw;
+    font-size: 4vw;
     -webkit-text-stroke: 1.4px var(--color-white); color: var(--color-transparent);
 }
 
@@ -994,6 +995,111 @@ body {
 .list_item .btn a {
     text-transform: uppercase;
     color: var(--color-white);
+}
+
+.list_item .btn:after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    width: 0;
+    height: 120%;
+    transition: 0.3s;
+    transform: skewX(20deg);
+    background-color: var(--color-white);
+    z-index: -1;
+}
+
+.list_item .btn:hover a {
+    font-weight: var(--weight-bold);
+    color: var(--color-dark);
+}
+
+.list_item .btn:hover::after {
+    left: -10%;
+    width: 120%;
+}
+
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transform: scale(0);
+}
+
+#modal .modal_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color:rgba(36, 35, 33, 0.7);
+}
+
+#modal .modal_bg .modal_cont {
+    position: relative;
+    display: inline-block;
+    width: 50vw;
+    height: 50vh;
+}
+
+#modal .modal_bg .modal_cont .close {
+    padding: 10px 0;
+    position: absolute;
+    display: flex;
+    top: 1%;
+    left: 101%;
+    width: 40px;
+}
+
+#modal .modal_bg .modal_cont .close i {
+    font-size: 24px;
+    color: #fff;
+}
+
+#modal.one {
+    transform: scaleY(0.005) scaleX(0);
+    animation: foldIn 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one.out {
+    transform: scale(1);
+    animation: foldOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one .modal-bg .modal-cont {
+    transform: scale(0);
+    animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+#modal.one.out .modal-bg .modal-cont {
+    transform: scale(0);
+    animation: zoomIn 0.5s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
+}
+
+@keyframes foldIn {
+    0% {transform: scaleY(0.005) scaleX(0);}
+    50% {transform: scaleY(0.005) scaleX(1);}
+    100% {transform: scaleY(1) scaleX(1);}
+}
+
+@keyframes foldOut {
+    0% {transform: scaleY(1) scaleX(1);}
+    50% {transform: scaleY(0.005) scaleX(1);}
+    100% {transform: scaleY(0.005) scaleX(0);}
+}
+
+@keyframes zoomIn {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+@keyframes zoomOut {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
 }
 
 /* -------------------------------------------------------------------------------------------------------------------- */
@@ -1107,171 +1213,6 @@ body {
     overflow: hidden;
     width: var(--img-width);
     height: var(--img-height);
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-}
-
-.modal .modal_bg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color:rgba(36, 35, 33, 0.7);
-}
-
-.modal .modal_bg .modal_cont {
-    position: relative;
-    display: inline-block;
-    width: 50vw;
-    height: 50vh;
-}
-
-.modal .modal_bg .modal_cont .close {
-    padding: 10px 0;
-    position: absolute;
-    display: flex;
-    top: 1%;
-    left: 101%;
-    width: 40px;
-}
-
-.modal .modal_bg .modal_cont .close i {
-    font-size: 24px;
-    color: #fff;
-}
-
-.modal.one {
-    transform: scaleY(0.005) scaleX(0);
-    -webkit-transform: scaleY(0.005) scaleX(0);
-    -moz-transform: scaleY(0.005) scaleX(0);
-    -ms-transform: scaleY(0.005) scaleX(0);
-    -o-transform: scaleY(0.005) scaleX(0);
-    animation: foldIn 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-    -webkit-animation: foldIn 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-}
-
-.modal.one.out {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    animation: foldOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-    -webkit-animation: foldOut 1s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-}
-
-.modal.one .modal-bg .modal-cont {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-    -webkit-animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-}
-
-.modal.one.out .modal-bg .modal-cont {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    animation: zoomIn 0.5s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-    -webkit-animation: zoomIn 0.5s cubic-bezier(0.165, 0.85, 0.44, 1) forwards;
-}
-
-@keyframes foldIn {
-    0% {
-        transform: scaleY(0.005) scaleX(0);
-        -webkit-transform: scaleY(0.005) scaleX(0);
-        -moz-transform: scaleY(0.005) scaleX(0);
-        -ms-transform: scaleY(0.005) scaleX(0);
-        -o-transform: scaleY(0.005) scaleX(0);
-}
-    50% {
-        transform: scaleY(0.005) scaleX(1);
-        -webkit-transform: scaleY(0.005) scaleX(1);
-        -moz-transform: scaleY(0.005) scaleX(1);
-        -ms-transform: scaleY(0.005) scaleX(1);
-        -o-transform: scaleY(0.005) scaleX(1);
-}
-    100% {
-        transform: scaleY(1) scaleX(1);
-        -webkit-transform: scaleY(1) scaleX(1);
-        -moz-transform: scaleY(1) scaleX(1);
-        -ms-transform: scaleY(1) scaleX(1);
-        -o-transform: scaleY(1) scaleX(1);
-}
-}
-
-@keyframes foldOut {
-    0% {
-        transform: scaleY(1) scaleX(1);
-        -webkit-transform: scaleY(1) scaleX(1);
-        -moz-transform: scaleY(1) scaleX(1);
-        -ms-transform: scaleY(1) scaleX(1);
-        -o-transform: scaleY(1) scaleX(1);
-}
-    50% {
-        transform: scaleY(0.005) scaleX(1);
-        -webkit-transform: scaleY(0.005) scaleX(1);
-        -moz-transform: scaleY(0.005) scaleX(1);
-        -ms-transform: scaleY(0.005) scaleX(1);
-        -o-transform: scaleY(0.005) scaleX(1);
-}
-    100% {
-        transform: scaleY(0.005) scaleX(0);
-        -webkit-transform: scaleY(0.005) scaleX(0);
-        -moz-transform: scaleY(0.005) scaleX(0);
-        -ms-transform: scaleY(0.005) scaleX(0);
-        -o-transform: scaleY(0.005) scaleX(0);
-}
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0);
-        -webkit-transform: scale(0);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-}
-    100% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-}
-}
-
-@keyframes zoomOut {
-    0% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-}
-    100% {
-        transform: scale(0);
-        -webkit-transform: scale(0);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-}
 }
 
 .js_box > article .box::before {
@@ -1605,6 +1546,9 @@ body {
     .work .work_box .w_box .box .right .card .img, 
     .work .work_box .ani_box .box .right {height: calc(var(--img-height) / var(--ratio-one));}
     /* // section3 .work */
+
+    .list .s1 {margin-bottom: 0;}
+    /* // section4 .animation */
 
     .poss .title h2 em:nth-child(1) {top: -5vw; right: 18vw;}
     .poss .title h2 em:nth-child(2) {top: 1vw; right: 6vw;}

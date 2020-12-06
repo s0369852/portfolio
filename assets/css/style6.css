@@ -53,6 +53,19 @@ body {
     color: var(--color-back);
     background: var(--color-white);
 }
+
+.grain {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.06;
+    z-index: 1;
+}
+
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 /* scroll box */
@@ -592,7 +605,7 @@ body {
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 /* section3 .work */
-#section3 .container {padding: 0 10vw;}
+#section3 .container {padding: 0 6vw;}
 
 .work {padding: 20vh 0; color: var(--color-white);}
 .work .title {margin-bottom: 50vh; text-align: center;}
