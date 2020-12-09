@@ -341,14 +341,23 @@ $(window).scroll(function(){
 
 // animation modal
 
-let aniBtn1 = $('.list_wrapper').find('.btn');
-let aniBtn2 = $('.w_box6').find('.btn');
+let aniBtn1 = $('.list_wrapper .l1').find('.btn');
+let aniBtn2 = $('.list_wrapper .l2').find('.btn');
+let aniBtn3 = $('.list_wrapper .l3').find('.btn');
+let aniBtn4 = $('.list_wrapper .l4').find('.btn');
+let aniBtn5 = $('.list_wrapper .l5').find('.btn');
 
-let modal1 = $('.list_wrapper').find('.modal');
-let modal2 = $('.w_box6').find('.modal');
+let modal1 = $('.list_wrapper .l1').find('#modal');
+let modal2 = $('.list_wrapper .l2').find('#modal');
+let modal3 = $('.list_wrapper .l3').find('#modal');
+let modal4 = $('.list_wrapper .l4').find('#modal');
+let modal5 = $('.list_wrapper .l5').find('#modal');
 
-let close1 = $('.list_wrapper').find('.close');
-let close2 = $('.w_box6').find('.close');
+let close1 = $('.list_wrapper .l1').find('.close');
+let close2 = $('.list_wrapper .l2').find('.close');
+let close3 = $('.list_wrapper .l3').find('.close');
+let close4 = $('.list_wrapper .l4').find('.close');
+let close5 = $('.list_wrapper .l5').find('.close');
 
 aniBtn1.click(function(e){
     e.preventDefault();
@@ -368,6 +377,32 @@ close2.click(function(e){
     modal2.addClass('out');
 });
 
+aniBtn3.click(function(e){
+    e.preventDefault();
+    modal3.removeClass().addClass('one');
+});
+close3.click(function(e){
+    e.preventDefault();
+    modal3.addClass('out');
+});
+
+aniBtn4.click(function(e){
+    e.preventDefault();
+    modal4.removeClass().addClass('one');
+});
+close4.click(function(e){
+    e.preventDefault();
+    modal4.addClass('out');
+});
+
+aniBtn5.click(function(e){
+    e.preventDefault();
+    modal5.removeClass().addClass('one');
+});
+close5.click(function(e){
+    e.preventDefault();
+    modal5.addClass('out');
+});
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
 // animation

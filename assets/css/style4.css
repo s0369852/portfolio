@@ -983,10 +983,10 @@ body {
     content: "0" counter(count);
     color: #ffffff;
     font-family: 'Anton', sans-serif;
-    font-size: 2vh;
+    font-size: 3vh;
     overflow: hidden;
     margin-top: 5vh;
-    max-width: 120px;
+    max-width: 140px;
     width: 100%;
     border: 1px solid #fff;
     text-align: center;
@@ -1012,7 +1012,7 @@ body {
 
 .list_item .btn:hover a {
     font-weight: var(--weight-bold);
-    color: var(--color-dark);
+    color: var(--color-back);
 }
 
 .list_item .btn:hover::after {
@@ -1026,7 +1026,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     z-index: 10;
     transform: scale(0);
 }
