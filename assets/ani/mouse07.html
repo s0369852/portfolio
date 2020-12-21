@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect07 - JavaScript</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        /* reset */
+
+        @font-face { 
+            font-family: 'GongGothicMedium'; 
+            src: url('https://github.com/projectnoonnu/noonfonts_20-10/blob/main/GongGothicMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px dashed #fff;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        ul {
+            padding: 10px 20px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+            font-size: 16px;
+            line-height: 1.5;
+            background: url(assets/img/03@2.jpg) no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'GongGothicMedium'; 
+            cursor: none;
+            transition:  all 0.2s;
+            -webkit-transition:  all 0.2s;
+            -moz-transition:  all 0.2s;
+            -ms-transition:  all 0.2s;
+            -o-transition:  all 0.2s;
+        }
+
+        body::before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(57, 70, 5, 0.7);
+        }
+
+        /* main */
+        .cursor {
+            user-select: none;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+            position: absolute;
+            width: 10vw;
+            height: 10vw;
+            background: url(assets/img/03@2.jpg) center center fixed;
+            background-size: cover;
+            /* 
+                background-attachment: fixed;
+                background-attachment: fixed; -> 이미지는 뒤에 있는 배경처럼 똑같이 한 면을 차지해서 움직이지 않는다. 
+                이미지를 고정시키놓은 상태에서 cursor박스만 움직이게 하면, 마치 돋보기를 보는 것처럼 착시효과를 나타낸다. 
+
+                background: url(/img/02.JPG)center center fixed; -> 여기 있는 fixed가 attachment의 fixed.
+            */
+            border: 5px solid #fff;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+
+        .contents {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .contents p {
+            max-width: 70vw;
+            font-size: 3vw;
+            text-align: justify;
+        }
+
+        .contents p:first-child {
+            font-size: 2vw;
+            line-height: 2;
+        }
+
+        .contents p em {
+            font-style: normal;
+            color: orange;
+            border-bottom: 2px dashed orange;
+        }
+
+
+        /* info */
+        .info {
+            position: absolute;
+            z-index: 1000;
+        }
+
+        .info h1 {
+            font-size: 20px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 8px;
+        }
+
+        .info p, .info li {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 3px;
+        }
+
+        .info li.active a:first-child {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .info.left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .info.right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .info.right a {
+            display: inline-block;
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+            border: 1px dashed #fff;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+        }
+
+        .info.right a:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .info.bottom {
+            left: 10px;
+            bottom: 10px;
+        }
+
+        .info.bottom li {
+            display: block;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+        }
+
+        .info.bottom li.active {
+            color: orange;
+        }
+
+        .info.bottom li:hover {
+            color: orange;
+        }
+
+        .info.view {
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .info.view a {
+            padding: 5px 30px;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+        }
+
+        @media (max-width: 800px) {
+            .info.bottom {display: none;}
+            .info.right {display: none;}
+        }
+
+    </style>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+</head>
+<body>
+    
+    <!-- main -->
+    <main>
+        <div class="cursor"></div>
+        
+        <div class="contents">
+            <p>I dream my painting and I paint my dream.</p>
+            <p>나는 나의 그림을 <em>꿈</em>꾸고, 내 <em>꿈</em>을 그린다.</p>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <!-- info -->
+    <div class="info left">
+        <h1><a href="mouse07.html">JavaScript Mouse Effect07</a></h1>
+        <p>마우스 방향에 따라 움직이기</p>
+    </div>
+    <!-- //info -->
+
+    <script>
+        const cursor = document.querySelector(".cursor");
+        const circle = cursor.getBoundingClientRect();
+
+        // cursor의 width값만을 가져올 수 있다. (예전 방식) 
+        //  const width = cursor.offsetWidth;
+        //  const height = cursor.offsetHeight;
+
+        //  console.log(width);
+        //  console.log(circle.width);
+
+        function follow(e){
+            gsap.to(cursor, {duration: 0.5, left:e.pageX - circle.width, top: e.pageY - circle.height});
+        };
+
+        document.addEventListener("mousemove", follow);
+
+        // 똑같은 소스를 짜도 jquery보단 javascript가 좀 더 빠르다. jquery는 버벅이는 현상이 있다. 
+            </script>
+
+</body>
+</html>

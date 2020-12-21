@@ -298,17 +298,6 @@ $(window).scroll(function(){
         gsap.to('.work h2 span', {duration: 0.5, opacity: 0, stagger: 0.1, y: 0});
     }
 
-    // section5 .js
-    if( scrollTop > $('#section5').offset().top){
-        $(".js_box").each(function(){
-            if( scrollTop > $(this).offset().top - wHeight / 2 ){
-                $(this).addClass("show")
-            } else {
-                $(this).removeClass("show")
-            }
-        });
-    }
-
     // section6 .poss
     if ( scrollTop > $('#section6').offset().top){
         gsap.to('.poss strong span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});
@@ -341,23 +330,23 @@ $(window).scroll(function(){
 
 // animation modal
 
-let aniBtn1 = $('.list_wrapper .l1').find('.btn');
-let aniBtn2 = $('.list_wrapper .l2').find('.btn');
-let aniBtn3 = $('.list_wrapper .l3').find('.btn');
-let aniBtn4 = $('.list_wrapper .l4').find('.btn');
-let aniBtn5 = $('.list_wrapper .l5').find('.btn');
+let aniBtn1 = $('.list_wrap .l1').find('.btn');
+let aniBtn2 = $('.list_wrap .l2').find('.btn');
+let aniBtn3 = $('.list_wrap .l3').find('.btn');
+let aniBtn4 = $('.list_wrap .l4').find('.btn');
+let aniBtn5 = $('.list_wrap .l5').find('.btn');
 
-let modal1 = $('.list_wrapper .l1').find('#modal');
-let modal2 = $('.list_wrapper .l2').find('#modal');
-let modal3 = $('.list_wrapper .l3').find('#modal');
-let modal4 = $('.list_wrapper .l4').find('#modal');
-let modal5 = $('.list_wrapper .l5').find('#modal');
+let modal1 = $('.list_wrap .l1').find('#modal');
+let modal2 = $('.list_wrap .l2').find('#modal');
+let modal3 = $('.list_wrap .l3').find('#modal');
+let modal4 = $('.list_wrap .l4').find('#modal');
+let modal5 = $('.list_wrap .l5').find('#modal');
 
-let close1 = $('.list_wrapper .l1').find('.close');
-let close2 = $('.list_wrapper .l2').find('.close');
-let close3 = $('.list_wrapper .l3').find('.close');
-let close4 = $('.list_wrapper .l4').find('.close');
-let close5 = $('.list_wrapper .l5').find('.close');
+let close1 = $('.list_wrap .l1').find('.close');
+let close2 = $('.list_wrap .l2').find('.close');
+let close3 = $('.list_wrap .l3').find('.close');
+let close4 = $('.list_wrap .l4').find('.close');
+let close5 = $('.list_wrap .l5').find('.close');
 
 aniBtn1.click(function(e){
     e.preventDefault();
@@ -405,7 +394,7 @@ close5.click(function(e){
 });
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// animation
+// section4 animation
 
 // Vars
     const $list = document.querySelector('.list_box');
@@ -510,3 +499,32 @@ close5.click(function(e){
     };
 
     render();
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+// section5 script
+
+    const btnLeft = document.querySelector(".scr_btn .left");
+    const btnRight = document.querySelector(".scr_btn .right");
+
+    const jsimgs = document.querySelector(".jsimgs");
+    const colors = document.querySelector(".bgcolor");
+    const texts = document.querySelector(".conts");
+
+    let index = 0;
+
+    function right() {
+        transform((index = index < 2 ? ++index : 0));
+    }
+
+    function left() { 
+        transform((index = index > 0 ? --index : 2));
+    }
+
+    btnLeft.addEventListener("click", left);
+    btnRight.addEventListener("click", right);
+
+    function transform(index) {
+        jsimgs.style.transform = `translateX(-${index * 100}%)`;
+        colors.style.transform = `translateX(-${index * 100}%)`;
+        texts.style.transform = `translateX(-${index * 100}%)`;
+    }
