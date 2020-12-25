@@ -296,6 +296,20 @@ $(window).scroll(function(){
         gsap.to('.work h2 span', {duration: 0.5, opacity: 0, stagger: 0.1, y: 0});
     }
 
+    // section5 .js
+    if( scrollTop > $('#section5').offset().top){
+        $('.absolute_wrap').addClass('show')
+        $('.js_box').each(function(){
+            if( scrollTop > $(this).offset().top){
+                $(this).addClass('show')
+            } else {
+                $(this).removeClass('show')
+            }
+        });
+    } else {
+        $('.absolute_wrap').removeClass('show')
+    }
+
     // section6 .poss
     if ( scrollTop > $('#section6').offset().top){
         gsap.to('.poss strong span', {duration: 0.5, opacity: 1, stagger: 0.1, y: 0, delay: 0.1});

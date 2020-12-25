@@ -6,16 +6,11 @@
     <title>Mouse Effect07 - JavaScript</title>
 
     <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600;700&display=swap" rel="stylesheet"> 
 
     <style>
         /* reset */
-
-        @font-face { 
-            font-family: 'GongGothicMedium'; 
-            src: url('https://github.com/projectnoonnu/noonfonts_20-10/blob/main/GongGothicMedium.woff') format('woff'); 
-            font-weight: normal; 
-            font-style: normal; 
-        }
 
         *, *::before, *::after {
             box-sizing: border-box;
@@ -58,7 +53,7 @@
             background: url(assets/img/03@2.jpg) no-repeat center center;
             background-size: cover;
             color: #ffffff;
-            font-family: 'GongGothicMedium'; 
+            font-family: 'Gothic A1', sans-serif;
             cursor: none;
             transition:  all 0.2s;
             -webkit-transition:  all 0.2s;
@@ -79,6 +74,14 @@
         }
 
         /* main */
+
+        .wrap {
+            margin: 0 auto 5vh;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
         .cursor {
             user-select: none;
             pointer-events: none;
@@ -244,18 +247,20 @@
     
     <!-- main -->
     <main>
-        <div class="cursor"></div>
-        
-        <div class="contents">
-            <p>I dream my painting and I paint my dream.</p>
-            <p>나는 나의 그림을 <em>꿈</em>꾸고, 내 <em>꿈</em>을 그린다.</p>
-        </div>
+        <section class="wrap">
+            <div class="cursor"></div>
+            
+            <div class="contents">
+                <p>I dream my painting and I paint my dream.</p>
+                <p>나는 나의 그림을 <em>꿈</em>꾸고, 내 <em>꿈</em>을 그린다.</p>
+            </div>
+        </section>
     </main>
     <!-- // main -->
 
     <!-- info -->
     <div class="info left">
-        <h1><a href="mouse07.html">JavaScript Mouse Effect07</a></h1>
+        <h1><a href="mouse07.html">JavaScript Mouse Effect</a></h1>
         <p>마우스 방향에 따라 움직이기</p>
     </div>
     <!-- //info -->
