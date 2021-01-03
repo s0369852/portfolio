@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
         }
 
         .bar {
-            margin:auto;
+            margin: auto;
             position: absolute;
             top: 0;
             left: 0;
@@ -23,7 +24,7 @@
             bottom: 0;
             width: 5px;
             height: 300px;
-            background-color: #fff; 
+            background-color: #fff;
             animation-name: bar;
             animation-duration: 1.5s;
             animation-timing-function: ease-in-out;
@@ -34,14 +35,31 @@
         }
 
         @keyframes bar {
-            0%    {transform: rotate(0); height: 0;}
-            25%   {transform: rotate(0); height: 300px;}
-            50%   {transform: rotate(180deg); height: 300px;}
-            100%  {transform: rotate(180deg); height: 0;}
+            0% {
+                transform: rotate(0);
+                height: 0;
+            }
+
+            25% {
+                transform: rotate(0);
+                height: 300px;
+            }
+
+            50% {
+                transform: rotate(180deg);
+                height: 300px;
+            }
+
+            100% {
+                transform: rotate(180deg);
+                height: 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="bar"></div>
 </body>
+
 </html>

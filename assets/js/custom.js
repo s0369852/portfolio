@@ -87,7 +87,7 @@ grain();
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// progress
+// loading
     function imagesProgress(){
         var $container = $("#progress"),
             $progressText = $container.find(".progress-text"),
@@ -158,7 +158,7 @@ function hasScroll(){
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// 공통
+// global
 $('.splice').each(function(){
     let txt = $(this).text();
     let split = txt.split('').join('</span><span aria-hidden="true">');
@@ -168,7 +168,7 @@ $('.splice').each(function(){
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// 버튼
+// Btn
 let navBtn = $('.nav_list li'),
     prevBtn = $('.slide .pslide'),
     nextBtn = $('.slide .nslide');
@@ -205,14 +205,14 @@ topBtn.click(function(e){
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// scroll
+// scroll function
 $(window).scroll(function(){
     let wScroll = $(window).scrollTop();
     const scrollTop = $(window).scrollTop()+ wHeight / 2;
 
     $('.scroll').text(parseInt(wScroll));
 
-    // header 나타내기
+    // showing header 
     currentScroll = true;
 
     // down scroll
@@ -222,13 +222,13 @@ $(window).scroll(function(){
         $('.down').removeClass('on')
     }
 
-    // nav 맨처음 클래스 삭제
+    // nav deleted first class 
     if(wScroll < $('#section1').offset().top){
         navBtn.removeClass('on');
         navBtn.eq(0).addClass('on');
     }
 
-    // nav 색상 변경
+    // nav ahanged color
     if( scrollTop > $('#section1').offset().top ){
         $(".nav_list li a").css("color", "#242321")
     }
@@ -245,25 +245,25 @@ $(window).scroll(function(){
         $(".nav_list li a").css("color", "#F0F0F0")
     }
 
-    //section1. main
+    //section1. intro
     if( scrollTop >= $('#header').offset().top ){
         $('body').removeClass('on');
         $('#section1').addClass('show');
         gsap.to('.nav_list', {duration: 0.5 , opacity: 1, stagger: 0.1, y: 1, delay: 0.4});
-        gsap.to('.main strong:nth-child(1) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0});
-        gsap.to('.main strong:nth-child(2) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
-        gsap.to('.main strong:nth-child(4) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
+        gsap.to('.intro strong:nth-child(1) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0});
+        gsap.to('.intro strong:nth-child(2) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.intro strong:nth-child(3) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+        gsap.to('.intro strong:nth-child(4) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
         
     }
-    if( wScroll > $('.main strong:nth-child(2) span').offset().top ){
-        gsap.to('.main strong:nth-child(5) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(6) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
-        gsap.to('.main strong:nth-child(7) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
+    if( wScroll > $('.intro strong:nth-child(2) span').offset().top ){
+        gsap.to('.intro strong:nth-child(5) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.intro strong:nth-child(6) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+        gsap.to('.intro strong:nth-child(7) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.3});
     }
-    if( wScroll > $('.main strong:nth-child(5) span').offset().top ){
-        gsap.to('.main strong:nth-child(8) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
-        gsap.to('.main strong:nth-child(9) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
+    if( wScroll > $('.intro strong:nth-child(5) span').offset().top ){
+        gsap.to('.intro strong:nth-child(8) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.1});
+        gsap.to('.intro strong:nth-child(9) span', {duration: 0.3, opacity: 1, stagger: 0.2, y: 0, delay: 0.2});
     }
 
     // section2 .about
@@ -358,7 +358,7 @@ $(window).scroll(function(){
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// animation modal
+// section4 .animation .modal
 
 let aniBtn1 = $('.list_wrap .l1').find('.btn');
 let aniBtn2 = $('.list_wrap .l2').find('.btn');
@@ -424,7 +424,7 @@ close5.click(function(e){
 });
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-// section4 animation
+// section4 .animation
 
 // Vars
     const $list = document.querySelector('.list_box');
@@ -433,18 +433,15 @@ close5.click(function(e){
     let listWidth = $list.clientWidth;
     let itemWidth = $items[0].clientWidth * 1.2;
     let wrapWidth = $items.length * itemWidth;
-
     let scrollSpeed = 0;
     let oldScrollY = 0;
     let scrollY = 0;
     let y = 0;
 
-
 // Lerp
     const lerp = (v0, v1, t) => {
         return v0 * (1 - t) + v1 * t;
     };
-
 
 // Dispose
     const dispose = scroll => {
@@ -461,12 +458,10 @@ close5.click(function(e){
 
     dispose(0);
 
-
 // Wheel
     const handleMouseWheel = e => {
         scrollY -= e.deltaY * 0.9;
     };
-
 
 // Touch
     let touchStart = 0;
@@ -502,17 +497,13 @@ close5.click(function(e){
 
     $list.addEventListener('selectstart', () => {return false;});
 
-
 // Resize
     window.addEventListener('resize', () => {
         listWidth = $list.clientWidth;
         itemWidth = $items[0].clientWidth * 1.2;
         wrapWidth = $items.length * itemWidth;
     });
-
     
-
-
 // Render
     const render = () => {
         requestAnimationFrame(render);
@@ -531,14 +522,14 @@ close5.click(function(e){
     render();
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
-// section5 script
+// section5 .js
 
     const btnLeft = document.querySelector(".scr_btn .left");
     const btnRight = document.querySelector(".scr_btn .right");
 
     const jsimgs = document.querySelector(".jsimgs");
     const colors = document.querySelector(".bgcolor");
-    const texts = document.querySelector(".conts");
+    const texts = document.querySelector(".js_box .conts");
 
     let index = 0;
 
